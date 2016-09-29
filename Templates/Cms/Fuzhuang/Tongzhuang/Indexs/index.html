@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head id="Head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="order by dede58.com" />
+<title>{{$configs['config_title']}}</title>
+<meta name="description" content="{{$configs['config_description']}}" />
+<meta name="keywords" content="{{$configs['config_keywords']}}" />
+
+<include file="header" />
+<!-- ==================== S header ==================== -->
+  <div id="a1portalSkin_headerAreaA" class="header">
+  <!-- Start_Module_124631 -->
+  <a name="24904" id="24904"></a>
+    <div class="module-default">
+      <div class="module-inner">
+        <div id="a1portalSkin_ctr124631124631_mainArea" class="module-content">
+        <!-- Start_Module_124631 --><!-- S slideshow -->
+          <div class="slideshow carousel clearfix" style="height:500px; overflow:hidden;">
+            <div id="carousel-124631">
+
+             <!-- 幻灯片 -->
+             <foreach name="carousel" item="v">
+              <div class="carousel-item">
+                <div class="carousel-img"><a href="javascript:;" target="">
+                <img src="{{$host}}{{$v['carousel_pic']}}" height="500" alt="{{$v['carousel_name']}}" /></a>
+                </div>
+              </div>
+              </foreach>
+             <!-- 幻灯片 -->
+
+
+              </div>
+            <div class="carousel-btn carousel-btn-fixed" id="carousel-page-124631"></div>
+          </div>
+          <script type="text/javascript">
+ 
+ $(window).bind("load resize",function(){
+  $("#carousel-124631").carouFredSel({
+   width       : '100%',
+   items  : { visible : 1 },
+   auto     : { pauseOnHover: true, timeoutDuration:5000 },
+   swipe     : { onTouch:true, onMouse:true },
+   pagination  : "#carousel-page-124631"
+   //prev   : { button:"#carousel-prev-124631"},
+   //next   : { button:"#carousel-next-124631"},
+   //scroll   : { fx : "crossfade" }
+  });
+ });
+</script><!-- E slideshow --><!-- End_Module_124631 --></div>
+      </div>
+    </div>
+  </div>
+  <!-- ==================== E Header ==================== --><!-- ==================== S main ==================== -->
+  <section class="main">
+    <div id="a1portalSkin_mainArea" class="full-screen clearfix"><!-- Start_Module_124632 -->
+    <a name="24905" id="24905"></a><!-- S module-full-screen -->
+      <div class="module-full-screen" style="">
+        <div class="module-inner not-animated" data-animate="fadeInUp" data-delay="200">
+          <div class="page-width">
+            <div class="module-full-screen-title">
+              <h2>PRODUCT</h2>
+              <div class="module-title-content" ><i class="mark-left"></i>
+                <h3 >最新产品</h3>
+                <i class="mark-right"></i></div>
+            </div>
+            <div id="a1portalSkin_ctr124632124632_mainArea" class="module-full-screen-content"><!-- Start_Module_124632 --><!-- S portfolio-list -->
+              <div class="portfolio-list product-list">
+                <ul class="column clearfix">
+                  <volist name="articles_product" id="vo" offset="0" length='12'>
+                      <li class='col-4-1 not-animated' data-animate='fadeInUp'>
+                      <div class="product-item">
+                      <div class="portfolio-img">
+                      <a href="{{:U('products',array('id'=>$vo['article_id']))}}" target="_blank">
+                      <img src="{{$host}}{{$vo['article_pic']}}" alt="{{$vo['article_title']}}}"/></a></div>
+                      <div class="portfolio-title">
+                      <h2><a href="{{:U('products',array('id'=>$vo['article_id']))}}" target="_blank">{{$vo['article_title']}}}</a></h2>
+                      </div>
+                      </div>
+                      </li>
+                </volist>
+                </ul>
+              </div>
+              <!-- E portfolio-list --><!-- End_Module_124632 --></div>
+           
+            <div class="module-full-screen-more"><a href="{{:U('Indexs/products')}}" target="_blank">更多产品</a></div>
+            
+            </div>
+        </div>
+      </div>
+      <!-- E module-full-screen --><!-- Start_Module_124633 --><a name="24903" id="24903"></a><!-- S module-full-screen -->
+      <div class="module-full-screen module-full-screen-hl module-full-screen-bg-img" style="background-image:url({{$tpl_path}}Images/677b0a3e-029c-43ee-952e-506b804a4a54.jpg);">
+        <div class="module-inner not-animated" data-animate="fadeInDown" data-delay="200">
+          <div class="page-width">
+            <div id="a1portalSkin_ctr124633124633_mainArea" class="module-full-screen-content"><!-- Start_Module_124633 -->
+              <div class="qhd-content"> 
+             <span style="font-size:16px;"><span style="color:#ffffff;"> {{$configs['config_about']}}...</span></span>
+
+              </div>
+              <!-- End_Module_124633 --></div>
+            <!-- {dede:type typeid='2'} -->
+            <div class="module-full-screen-more"><a href="#" target="_blank">查看更多</a></div>
+            <!-- {/dede:type}  --></div>
+        </div>
+      </div>
+      <!-- E module-full-screen --><!-- Start_Module_124634 --><a name="24906" id="24906"></a><!-- S module-full-screen -->
+
+
+
+
+
+
+      <div class="module-full-screen" style="">
+        <div class="module-inner not-animated" data-animate="fadeInUp" data-delay="200">
+          <div class="page-width">
+            <div id="a1portalSkin_ctr124634124634_mainArea" class="module-full-screen-content"><!-- Start_Module_124634 -->
+            <div class="module-full-screen-title">
+                      <h2>INFORMATION</h2>
+                      <div class="module-title-content">
+                      <i class="mark-left"></i>
+                      <h3>最新资讯</h3>
+                      <i class="mark-right"></i>
+                      </div>
+                      </div>
+              <div class="qhd-module">
+                <div class="column">
+                  <div class="col-3-2">
+                    <div id="a1portalSkin_ctr124634124634_Column2C67A33_QHDCPM124634M1" class="qhd_column_contain"><!-- Start_Module_124635 --><a name="24907" id="24907"></a>
+                      <div class="module-default">
+                        <div class="module-inner">
+                        
+                          <div id="a1portalSkin_ctr124634124634_Column2C67A33_ctr124635124635_mainArea" class="module-content"><!-- Start_Module_124635 --><!-- S headlines-list-2col -->
+                            <div class="headlines-list-2col clearfix"> 
+
+                            <volist name="articles_wens" id="v" offset="0" length='1'>
+                              <div class="headlines-content not-animated" data-animate="fadeInUp" data-delay="200">
+                                <p><a href="[field:arcurl/]" target="_blank">
+                                <img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}" /></a></p>
+                                <h2><a href="{{:U('Indexs/product',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></h2>
+                                <div class="headlines-content-summary">
+                                  <div class="qhd-content">
+                                    <p> {{$v['article_description']}}...</p>
+                                  </div>
+                                </div>
+                              </div>
+                             </volist>
+
+
+
+                              <div class="headlines-others not-animated" data-animate="fadeInUp" data-delay="400"><!-- S entry-list -->
+                                <div class="entry-list entry-list-time-hl entry-set-time-hl">
+                                <volist name="articles_wens" id="v" offset="1" length='4'>
+                                  <!-- S entry-item -->
+                                  <div class="entry-item">
+                                    <div class="time">
+                                      <p class="time-day">{{$v['article_time']|date="d",###}}</p>
+                                      <p class="time-date">{{$v['article_time']|date="Y-m",###}}</p>
+                                    </div>
+                                    <div class="entry-title">
+                                      <h2><a href="" target="_blank">{{$v['article_title']}}</a></h2>
+                                    </div>
+                                    <div class="entry-summary">
+                                      <div class="qhd-content">
+                                        <p> {{$v['article_description']}}...</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- E entry-item --> 
+                                  </volist>
+                                  </div>
+                                <!-- E entry-list --></div>
+                            </div>
+                            <!-- E headlines-list-2col --><!-- End_Module_124635 --></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3-1 last">
+                    <div id="a1portalSkin_ctr124634124634_Column2C67A33_QHDCPM124634M2" class="qhd_column_contain"><!-- Start_Module_124636 --><a name="24908" id="24908"></a>
+                      <div class="module-default">
+                        <div class="module-inner">
+                         
+                          <div id="a1portalSkin_ctr124634124634_Column2C67A33_ctr124636124636_mainArea" class="module-content"><!-- Start_Module_124636 --><!-- S article-list-row -->
+                            <div class="article-list-row">
+                              <ul>
+                               <volist name="articles_wens" id="v" offset="5" length='11'>
+                                <li><a class="article-title" href="[field:arcurl/]" target="_blank">{{$v['article_title']}}</a></li>
+                               </volist>
+                              </ul>
+                            </div>
+                            <!-- E article-list-row --><!-- End_Module_124636 --></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End_Module_124634 --></div>
+          </div>
+        </div>
+      </div>
+      <!-- E module-full-screen --></div>
+    <!-- end of page-width --></section>
+  <!-- ==================== E main ==================== -->
+  <include file="footer" />
+
+
+  </div>
+
+
+<!-- 外部脚本 --> 
+</body>
+</html>

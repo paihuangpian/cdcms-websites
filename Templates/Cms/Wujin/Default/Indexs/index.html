@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>云狄cms演示站点 - 云狄网络</title>
+    <include file="header" />
+    
+    <!-- news -->
+    <div class="news">
+        <div class="container">
+            <div class="row title">
+                <div class="col-sm-12">
+                    <h2>最新资讯</h2>
+                </div>
+            </div>
+            <!-- 有缩略图 -->
+        <volist name="articles_wens" id="vo" offset="0" length='2'>
+            <div class="row border">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a href="{{:U('indexs/news',array('id'=>$vo['article_id']))}}">
+                                <h3>{{$vo['article_title']}}</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3 hidden-xs">
+                            <a href="{{:U('indexs/news',array('id'=>$vo['article_id']))}}"><img src="{{$host}}{{$vo['article_pic']}}" alt="{{$vo['article_title']}}" class="img-responsive"></a>
+                        </div>
+                        <div class="col-sm-9">
+                            <p>{{$vo['article_description']}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </volist>
+            <!-- 无缩略图 -->
+             <volist name="articles_wens" id="vo" offset="2" length='2'>
+            <div class="row last">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a href="{{:U('indexs/news',array('id'=>$vo['article_id']))}}">
+                                <h3>{{$vo['article_title']}}</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>{{$vo['article_description']}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </volist>
+
+
+            <div class="row more">
+                <div class="col-sm-12">
+                    <a href="">更多 +</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- products -->
+    <div class="container products">
+        <div class="row title">
+            <div class="col-sm-12">
+                <h2>产品中心</h2>
+            </div>
+        </div>
+        <div class="row">
+
+        <volist name="articles_product" id="vo" offset="0" length='2'>
+            <div class="col-sm-6">
+                <a href="{{:U('indexs/product',array('id'=>$vo['article_id']))}}"><img src="{{$host}}{{$vo['article_pic']}}" alt="" class="img-responsive"></a>
+                <p><a href="{{:U('indexs/product',array('id'=>$vo['article_id']))}}"></a></p>
+            </div>
+        </volist>
+            
+        </div>
+        <div class="row more">
+            <div class="col-sm-12">
+                <a href="">更多 +</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- about -->
+    <div class="about" id="about">
+        <div class="container">
+            <div class="row title">
+                <div class="col-sm-12">
+                    <h2>关于我们</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>{{$configs['config_about']}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact -->
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="row title">
+                <div class="col-sm-12">
+                    <h2>联系我们</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>联系电话：{{$configs['config_tel']}}</p>
+                    <p>联系地址：{{$configs['config_address']}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- message -->
+    <div class="message" id="message">
+        <div class="container">
+            <div class="row title">
+                <div class="col-sm-12">
+                    <h2>留言板</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <form action="{{$host}}/Message/message_add" method="post">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="hidden" name="url" value="{{$redirect}}"> <!-- 当前url -->
+                                <input type="hidden" name="name" value="{{$_SESSION['prefix']}}"> <!-- 获取网站所属用户 -->
+                                <input type="text" placeholder="姓名" name="username">
+                                <input type="text" placeholder="电话" name="tel">
+                                <input type="text" placeholder="QQ或邮箱" name="email">
+                                 <input type="text" name="code" placeholder="验证码">
+                            </div>
+                            <div class="col-sm-6">
+                                <textarea name="text" placeholder="留言内容"></textarea>
+                                <img src="{{$host}}/Message/code" alt="验证码图片" style="height:50px;" onclick="this.src='{{$host}}/Message/code?'+Math.random()"  />
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-sm-12"><button type="submit">提交留言</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   <include file="footer" />

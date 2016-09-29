@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head id="Head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="order by dede58.com" />
+<title>{{$column['column_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+  <div id="a1portalSkin_headerAreaA" class="header"><!-- Start_Module_124649 -->
+  <a name="24915" id="24915"></a>
+    <div class="module-default">
+      <div class="module-inner">
+        <div id="a1portalSkin_ctr124649124649_mainArea" class="module-content"><!-- Start_Module_124649 --><!-- S slideshow -->
+          <div class="slideshow slideshow-min carousel clearfix" style="height:300px; overflow:hidden;">
+            <div id="carousel-124649">
+              <div class="carousel-item">
+                <div class="carousel-img"><a href="javascript:;" target="">
+                <img src="{{$tpl_path}}Images/448e3513-719d-4857-b151-7c376480373c_0_300.jpg" height="300" alt="广告轮换1" /></a></div>
+              </div>
+            </div>
+            <div class="carousel-btn carousel-btn-fixed" id="carousel-page-124649"></div>
+          </div>
+          <script type="text/javascript">
+ $(window).bind("load resize",function(){
+  $("#carousel-124649").carouFredSel({
+   width       : '100%',
+   items  : { visible : 1 },
+   auto     : { pauseOnHover: true, timeoutDuration:5000 },
+   swipe     : { onTouch:true, onMouse:true },
+   pagination  : "#carousel-page-124649",
+   scroll   : { fx : "crossfade" }
+  }); 
+ });
+</script><!-- E slideshow --><!-- End_Module_124649 --></div>
+      </div>
+    </div>
+  </div>
+  <!-- ==================== E Header ==================== --><!-- ==================== S main ==================== -->
+  <section class="main">
+    <div class="page-width clearfix"><!-- S content -->
+      <section class="content float-right"><!-- S page-title -->
+        <section class="page-title page-title-inner clearfix"><!-- S breadcrumbs -->
+          <div class="breadcrumbs float-right" skinobjectzone="HtmlBreadCrumb_2811">
+          <span>当前位置：</span>{{$position}}</div>
+          <!-- E breadcrumbs --><!-- S page-name -->
+          <div class="page-name float-left">
+            <h2>{{$current}}</h2>
+            </div>
+          <!-- E page-name -->
+          </section>
+        <!-- E page-title -->
+        <div id="a1portalSkin_mainArea" class="content-wrapper"><!-- Start_Module_124648 -->
+        <a name="24900" id="24900"></a>
+          <div class="module-default">
+            <div class="module-inner">
+              <div id="a1portalSkin_ctr124648124648_mainArea" class="module-content">
+              <!-- Start_Module_124648 --><!-- S portfolio-list -->
+                <div class="portfolio-list product-list">
+                  <ul class="column clearfix">
+                   <foreach name="articles" item="v">
+                    <li class='col-3-1 not-animated' data-animate='fadeInUp'>
+                      <div class="product-item">
+                        <div class="portfolio-img"><a href="{{:U('product',array('id'=>$v['article_id']))}}" target="_blank"><img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}" /></a></div>
+                        <div class="portfolio-title">
+                          <h2><a href="{{:U('product',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></h2>
+                        </div>
+                      </div>
+                    </li>
+                </foreach>
+
+
+                  </ul>
+                </div>
+                <style>
+                  .current{margin-left:15px;}
+                </style>
+                <!-- E portfolio-list --><!-- S pagination -->
+                <div class="m-page">
+                  <ul class="pagelist">
+                     共 {{$number}} 页 {{$count}} 条记录 {{$show}}
+                  </ul>
+                </div>
+                <!-- /pages --> 
+                <!-- E pagination --><!-- End_Module_124648 --></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <include file="left" />
+      </div>
+  </section>
+<include file="footer" />
+ </div>
+</body>
+</html>

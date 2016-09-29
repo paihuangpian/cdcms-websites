@@ -1,0 +1,30 @@
+<section class="sidebar float-left"><!-- S page-menu -->
+  <section class="page-menu" skinobjectzone="menu_2994">
+    <div class="page-menu-title">
+      <h3>{{$current_column['column_name']}}</h3>
+    </div>
+    <div class="page-menu-content">
+      <ul>
+       <foreach name="current_column['second']" item="v">
+        <li class=""><a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}"  target="">{{$v['column_name']}}</a><i></i></li>
+      </foreach>
+      </ul>
+      <!-- S 没有子菜单时输出 --><!-- E 没有子菜单时输出 --><script type="text/javascript">
+                   $(document).ready(function(){
+        $('.page-menu-content ul').find('li:last').addClass('last');
+        
+        $('.page-menu-content > ul > li > a').click(function(){
+         if( $(this).parent('li').find('ul') ){
+          $(this).parent('li').find('ul').slideDown('fast');
+          $(this).parent('li').siblings('li').find('ul').slideUp('fast');
+          $(this).parent('li').addClass('current').siblings('li').removeClass('current');
+         }
+        }); 
+        
+       });
+</script></div>
+  </section>
+  <!-- S page-menu -->
+  <div class="clear"></div>
+  <div id="a1portalSkin_sidebarAreaA" class="QHDEmptyArea sidebar-content"></div>
+</section>

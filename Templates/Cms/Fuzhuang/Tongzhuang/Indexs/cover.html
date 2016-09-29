@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head id="Head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="order by dede58.com" />
+<title>{{$column['column_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+  <div id="a1portalSkin_headerAreaA" class="header"><!-- Start_Module_124653 --><a name="24911" id="24911"></a>
+    <div class="module-default">
+      <div class="module-inner">
+        <div id="a1portalSkin_ctr124653124653_mainArea" class="module-content"><!-- Start_Module_124653 --><!-- S slideshow -->
+          <div class="slideshow slideshow-min carousel clearfix" style="height:300px; overflow:hidden;">
+            <div id="carousel-124653">
+              <div class="carousel-item">
+                <div class="carousel-img">
+                <a href="javascript:;" target="">
+                <img src="{{$tpl_path}}Images/08b667bf-6981-45c0-bcf4-27b0ae8a542c_0_300.jpg" height="300" alt="广告轮换1" /></a></div>
+              </div>
+            </div>
+            <div class="carousel-btn carousel-btn-fixed" id="carousel-page-124653"></div>
+          </div>
+          <script type="text/javascript">
+ $(window).bind("load resize",function(){
+  $("#carousel-124653").carouFredSel({
+   width       : '100%',
+   items  : { visible : 1 },
+   auto     : { pauseOnHover: true, timeoutDuration:5000 },
+   swipe     : { onTouch:true, onMouse:true },
+   pagination  : "#carousel-page-124653",
+   scroll   : { fx : "crossfade" }
+  }); 
+ });
+</script><!-- E slideshow --><!-- End_Module_124653 --></div>
+      </div>
+    </div>
+  </div>
+  <!-- ==================== E Header ==================== --><!-- ==================== S main ==================== -->
+  <section class="main">
+    <div class="page-width clearfix"><!-- S content -->
+      <section class="content float-right"><!-- S page-title -->
+        <section class="page-title page-title-inner clearfix"><!-- S breadcrumbs -->
+          <div class="breadcrumbs float-right" skinobjectzone="HtmlBreadCrumb_2811"><span>当前位置：</span>{{$position}}</div>
+          <!-- E breadcrumbs --><!-- S page-name -->
+          <div class="page-name float-left">
+
+            <h2>{{$current}}</h2>
+            </div>
+          <!-- E page-name --></section>
+        <!-- E page-title -->
+        <div id="a1portalSkin_mainArea" class="content-wrapper"><!-- Start_Module_124654 --><a name="24895" id="24895"></a>
+          <div class="module-default">
+            <div class="module-inner">
+              <div id="a1portalSkin_ctr124654124654_mainArea" class="module-content"><!-- Start_Module_124654 --><!-- S column-detail -->
+                <div class="article-detail">
+                 
+                  
+                  <div class="article-content-wrapper">
+                    <div class="article-content">
+                      <div class="qhd-content" id="mybody"> {{$column['column_text']}} </div>
+                    </div>
+                    {{$listitem}}
+                    <div class="detail-bottom">
+                      <div class="share-toolbar float-left clearfix"><!-- S 分享到 -->
+                        <div class="bdsharebuttonbox"><span style="float:left; height:16px; line-height:16px; margin:6px 0 6px 0;">分享到：</span><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a href="#" class="bds_more" data-cmd="more"></a></div>
+                        <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script><!-- E 分享到 --></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- article-detail --><!-- End_Module_124654 --></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- S content --><!-- S sidebar --> 
+     <include file="left" />
+      </div>
+  </section>
+  <include file="footer" />
+  </div>
+</body>
+ <script>
+ var rep = /^http/;
+    for(var i = 0;i <= $('#mybody img').length;i++){
+      if(!rep.test($('#mybody img').eq(i).attr('src'))){
+        $('#mybody img').eq(i).attr('src','{{$host}}' + $('#mybody img').eq(i).attr('src'))
+        
+      }
+        
+    }
+
+ </script>
+</html>

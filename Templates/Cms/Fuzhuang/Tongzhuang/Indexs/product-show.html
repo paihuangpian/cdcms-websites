@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head id="Head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="order by dede58.com" />
+<title>{{$article['article_title']}}</title>
+<meta name="keywords" content="{{$article['article_keywords']}}" />
+<meta name="description" content="{{$article['article_description']}}" />
+<include file="header" />
+  <div id="a1portalSkin_headerAreaA" class="QHDEmptyArea header"></div>
+  <!-- ==================== E Header ==================== --><!-- ==================== S main ==================== -->
+  <section class="main">
+    <div class="page-width clearfix"><!-- S full-page-content -->
+      <div class="full-page-content">
+        <div id="a1portalSkin_mainArea" class="full-page-content-wrapper"><!-- Start_Module_124667 --><a name="24902" id="24902"></a>
+          <div class="module-default">
+            <div class="module-inner">
+              <div id="a1portalSkin_ctr124667124667_mainArea" class="module-content"><!-- Start_Module_124667 --><!-- S product-detail-complete -->
+                <div class="product-detail product-detail-complete"><!-- S product-intr -->
+                  <div class="product-intr clearfix">
+                    <div class="product-preview"><!-- S 单张图片 -->
+                      <div class="single-img-wrap">
+                        <p><img src="{{$host}}{{$article['article_pic']}}" alt="{{$article['article_title']}}" /></p>
+                      </div>
+                      <!-- E 单张图片 --><!-- S　图库 -->
+                      <script type="text/javascript">
+    $(document).ready(function(){
+     $('.gallery-zoom-img-wrap .ps-current > ul > li > a').attr("rel", $('.gallery-zoom-img-wrap').attr('data-rel')).append('<span class="icon-zoom">查看大图</span>');
+     //弹窗
+     $('.gallery-zoom-img-wrap .ps-current > ul > li > a').fancybox({
+      'transitionIn'  : 'elastic',
+      'transitionOut'  : 'elastic',
+      'hideOnOverlayClick': false,
+      'centerOnScroll' : true,
+      'padding'    : 0,
+      'overlayColor'   : '#000'
+     });
+    });
+</script><!-- E　图库 --></div>
+                    <!-- end of product-preview -->
+                    <div class="product-info">
+                      <div class="product-info-item">
+                        <div class="product-name">
+                          <h1>{{$article['article_title']}}</h1>
+                        </div>
+                      </div>
+                      <div class="product-info-item">
+                        <div class="product-summary">
+                          <div class=qhd-content>{{$article['article_description']}}</div>
+                        </div>
+                      </div>
+                      <div class="product-info-item">
+                        <div class="share-toolbar clearfix"><!-- S 分享到 -->
+                          <div class="bdsharebuttonbox">
+                          <span style="float:left; height:16px; line-height:16px; margin:6px 0 6px 0;">分享到：</span>
+                          <a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>
+                          <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
+                          <a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a>
+                          <a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a>
+                          <a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a>
+                          <a href="#" class="bds_more" data-cmd="more"></a></div>
+                          <script>
+      window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script><!-- E 分享到 --></div>
+                      </div>
+                    </div>
+                    <!-- end of product-info --></div>
+                  <!-- E product-intr --><!-- S product-detail-wrapper -->
+                  <div class="product-detail-wrapper">
+                    <div class="product-detail-title">
+                      <h3>详情介绍</h3>
+                    </div>
+                    <div class="product-detail">
+                      <div class="qhd-content"> {{$article['article_text']}} </div>
+                    </div>
+                    {{$listitem}}
+                  </div>
+                  <!-- E product-detail-wrapper --></div>
+                <!-- E product-detail-complete --><!-- End_Module_124667 --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- E full-page-content --></div>
+  </section>
+  <include file="footer" />
+  </div>
+</body>
+ <script>
+    for(var i = 0;i <= $('.qhd-content img').length;i++){
+        
+        $('.qhd-content img').eq(i).attr('src','{{$host}}' + $('.qhd-content img').eq(i).attr('src'))
+    }
+
+ </script>
+</html>

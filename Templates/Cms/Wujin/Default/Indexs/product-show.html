@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>云狄cms演示站点-产品页</title>
+    <include file="header" />
+
+    <!-- products -->
+    <div class="container products">
+        <div class="row title">
+            <div class="col-sm-12">
+                <h2>{{$article['article_title']}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="{{$tpl_path}}/images/demo/cms/banner.jpg" alt="" class="img-responsive">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="imgsrc">
+               {{$article['article_text']}}
+            </div>
+        </div>
+    </div>
+ <include file="footer" />
+ <script>
+for(var i = 0;i <= $('#imgsrc img').length;i++){
+    
+    $('#imgsrc img').eq(i).attr('src','{{$host}}' + $('#imgsrc img').eq(i).attr('src'))
+}
+
+ </script>
