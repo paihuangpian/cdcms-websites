@@ -83,14 +83,15 @@
       </div>
       <!-- E full-page-content --></div>
   </section>
-  <include file="footer" />
-  </div>
-</body>
- <script>
+  <script>
     for(var i = 0;i <= $('.qhd-content img').length;i++){
         
         $('.qhd-content img').eq(i).attr('src','{{$host}}' + $('.qhd-content img').eq(i).attr('src'))
     }
 
  </script>
+  <include file="footer" />
+  </div>
+</body>
+ 
 </html>

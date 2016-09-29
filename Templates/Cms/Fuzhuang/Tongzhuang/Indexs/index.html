@@ -70,10 +70,10 @@
                       <li class='col-4-1 not-animated' data-animate='fadeInUp'>
                       <div class="product-item">
                       <div class="portfolio-img">
-                      <a href="{{:U('products',array('id'=>$vo['article_id']))}}" target="_blank">
+                      <a href="{{:U('Indexs/product',array('id'=>$vo['article_id']))}}" target="_blank">
                       <img src="{{$host}}{{$vo['article_pic']}}" alt="{{$vo['article_title']}}}"/></a></div>
                       <div class="portfolio-title">
-                      <h2><a href="{{:U('products',array('id'=>$vo['article_id']))}}" target="_blank">{{$vo['article_title']}}}</a></h2>
+                      <h2><a href="{{:U('Indexs/product',array('id'=>$vo['article_id']))}}" target="_blank">{{$vo['article_title']}}}</a></h2>
                       </div>
                       </div>
                       </li>
@@ -133,9 +133,9 @@
 
                             <volist name="articles_wens" id="v" offset="0" length='1'>
                               <div class="headlines-content not-animated" data-animate="fadeInUp" data-delay="200">
-                                <p><a href="[field:arcurl/]" target="_blank">
+                                <p><a href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" target="_blank">
                                 <img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}" /></a></p>
-                                <h2><a href="{{:U('Indexs/product',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></h2>
+                                <h2><a href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></h2>
                                 <div class="headlines-content-summary">
                                   <div class="qhd-content">
                                     <p> {{$v['article_description']}}...</p>
@@ -156,7 +156,7 @@
                                       <p class="time-date">{{$v['article_time']|date="Y-m",###}}</p>
                                     </div>
                                     <div class="entry-title">
-                                      <h2><a href="" target="_blank">{{$v['article_title']}}</a></h2>
+                                      <h2><a href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></h2>
                                     </div>
                                     <div class="entry-summary">
                                       <div class="qhd-content">
@@ -183,7 +183,7 @@
                             <div class="article-list-row">
                               <ul>
                                <volist name="articles_wens" id="v" offset="5" length='11'>
-                                <li><a class="article-title" href="[field:arcurl/]" target="_blank">{{$v['article_title']}}</a></li>
+                                <li><a class="article-title" href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></li>
                                </volist>
                               </ul>
                             </div>

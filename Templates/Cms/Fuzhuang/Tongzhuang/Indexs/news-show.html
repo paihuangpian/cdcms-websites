@@ -82,6 +82,13 @@
      <include file="left" />
       </div>
   </section>
+  <script>
+    for(var i = 0;i <= $('#mybody img').length;i++){
+        
+        $('#mybody img').eq(i).attr('src','{{$host}}' + $('#mybody img').eq(i).attr('src'))
+    }
+
+ </script>
   <include file="footer" />
   </div>
 </body>
