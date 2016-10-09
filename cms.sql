@@ -50,8 +50,10 @@ create table if not exists `cms_config`(
 	`config_logo` varchar(255) not null default '/Templates/Default/Public/default.png' COMMENT '网站LOGO',
 	`config_pic` varchar(255) not null default '/Templates/Default/Public/erweima.png' COMMENT '二维码',
 	`config_tel` char(20) not null default '020-85026566' COMMENT '服务电话',
+	`config_chuanzhen` varchar(255) not null COMMENT '传真',
 	`config_phone` char(20) not null default '13711012007' COMMENT '手机',
 	`config_customer` varchar(255) not null COMMENT '在线客服',
+	`config_weibo` varchar(255) not null COMMENT '微博',
 	`config_copyright` varchar(255) not null COMMENT '版权信息',
 	`config_record` varchar(255) not null COMMENT '备案信息',
 	`config_address` varchar(255) not null default '广州市白云区金沙洲沙凤商业大厦8楼' COMMENT '联系地址',
@@ -123,10 +125,15 @@ create table if not exists `cms_message`(
 
 
 
+
 --模板分类表
 create table if not exists `tpl_type`(
 	`id` int unsigned not null auto_increment primary key COMMENT 'id',
 	`name` varchar(255) COMMENT '模板分类名称',
 	`pid` int COMMENT '模板父id',
-  	`addtime` int unsigned default null COMMENT '发布时间'
+	`path` varchar(255) COMMENT '路径',
+  	`addtime` int unsigned default null COMMENT '添加时间'
 )engine=innodb default charset=utf8;
+
+
+insert into tpl_type values(1,'服装、饰品、个人护理',0,123123123);

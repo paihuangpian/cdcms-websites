@@ -27,9 +27,10 @@ class IndexsController extends CommonController
             }
 
             $news_article = M('Cms_article');
-            $articles_wens = $news_article->where("($columnid) and article_status = 0 and article_userid = ".session('userid'))->order('article_id desc')->limit('20')->select();
-            $this->assign('articles_wens',$articles_wens);
+            $articles_news = $news_article->where("($columnid) and article_status = 0 and article_userid = ".session('userid'))->order('article_id desc')->limit('20')->select();
+            $this->assign('articles_news',$articles_news);
         }
+
 
 
         //分配产品信息
@@ -44,12 +45,6 @@ class IndexsController extends CommonController
             $this->assign('articles_product',$articles_product);
 
         }
-
-
-        //分配友情链接
-        $friendship = M('Cms_friendship');
-        $friendships = $friendship->where('friendship_status = 0 and friendship_userid = '.session('userid'))->select();
-        $this->assign('friendships',$friendships);
 
     	$this->display();
     }
@@ -89,7 +84,7 @@ class IndexsController extends CommonController
             $position .= "<a href='".U("newss",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> >";
          }
          $position .= $current = "{$column['column_name']}";
-         $this->assign('current',$current);
+         $this->assign('current',$current);//当前栏目名称
          $this->assign('position',$position);
 
         //查询文章
@@ -151,10 +146,10 @@ class IndexsController extends CommonController
 
         //分配面包屑导航
         $position_name = $cms_column->where("column_id = {$column['column_pid']} and column_userid = ".session('userid'))->field('column_name,column_id')->find();
-         $position = "<a href='".U(__CONTROLLER__)."'>首页</a> >";
+         $position = "<a href='".U(__CONTROLLER__)."'>首页</a> → ";
          if($position_name){
 
-            $position .= "<a href='".U("{$position_name['column_type']}",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> >";
+            $position .= "<a href='".U("{$position_name['column_type']}",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> → ";
          }
          $position .= $current = "{$column['column_name']}";
          $this->assign('current',$current);
@@ -221,10 +216,10 @@ class IndexsController extends CommonController
 
         //分配面包屑导航
         $position_name = $cms_column->where("column_id = {$columnid['column_pid']} and column_userid = ".session('userid'))->field('column_name,column_id,column_type')->find();
-         $position = "<a href='".U(__CONTROLLER__)."'>首页</a> >";
+         $position = "<a href='".U(__CONTROLLER__)."'>首页</a> → ";
          if($position_name){
 
-            $position .= "<a href='".U("{$columnid['column_type']}",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> >";
+            $position .= "<a href='".U("{$columnid['column_type']}",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> → ";
          }
          $position .= $current = "<a href='".U("{$columnid['column_type']}",array('id'=>$columnid['column_id']))."'>{$columnid['column_name']}</a>";
          $this->assign('current',$current);//当前栏目
@@ -299,10 +294,10 @@ class IndexsController extends CommonController
 
         //分配面包屑导航
         $position_name = $cms_column->where("column_status = 0 and column_id = {$columnid['column_pid']} and column_userid = ".session('userid'))->field('column_name,column_id,column_type')->find();
-         $position = "<a href='".U(__CONTROLLER__)."'>首页</a> >";
+         $position = "<a href='".U(__CONTROLLER__)."'>首页</a> → ";
          if($position_name){
 
-            $position .= "<a href='".U("products",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> >";
+            $position .= "<a href='".U("products",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> → ";
          }
          $position .= $current = "<a href='".U("products",array('id'=>$columnid['column_id']))."'>{$columnid['column_name']}</a>";
          $this->assign('current',$current);//当前
@@ -328,7 +323,7 @@ class IndexsController extends CommonController
          }
          $this->assign('listitem',$listitem);
 
-         //相关文章
+        //相关文章
        $count = $cms_article->where("article_column = {$article['article_column']} and article_status = 0 and article_userid = ".session('userid'))->count();
        if($count > 15){
         $mt_rand = mt_rand(0,$count - 15);
@@ -379,10 +374,10 @@ class IndexsController extends CommonController
 
         // 分配面包屑导航
         $position_name = $cms_column->where("column_id = {$column['column_pid']} and column_userid = ".session('userid'))->field('column_name,column_id')->find();
-         $position = "<a href='".U(__CONTROLLER__)."'>首页</a> >";
+         $position = "<a href='".U(__CONTROLLER__)."'>首页</a> → ";
          if($position_name){
 
-            $position .= "<a href='".U("{$column['column_type']}",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> >";
+            $position .= "<a href='".U("{$column['column_type']}",array('id'=>$position_name['column_id']))."'>".$position_name['column_name']."</a> → ";
          }
          $position .= $current = "<a href='".U("{$column['column_type']}",array('id'=>$column['column_id']))."'>{$column['column_name']}</a>";
          $this->assign('current',$current);//当前

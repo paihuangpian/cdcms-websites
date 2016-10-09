@@ -60,7 +60,8 @@
                    <foreach name="articles" item="v">
                     <li class='col-3-1 not-animated' data-animate='fadeInUp'>
                       <div class="product-item">
-                        <div class="portfolio-img"><a href="{{:U('product',array('id'=>$v['article_id']))}}" target="_blank"><img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}" /></a></div>
+                        <div class="portfolio-img"><a href="{{:U('product',array('id'=>$v['article_id']))}}" target="_blank">
+                        <img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}" /></a></div>
                         <div class="portfolio-title">
                           <h2><a href="{{:U('product',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></h2>
                         </div>

@@ -13,9 +13,9 @@ define('APP_PATH','./App/');
 define('BIND_MODULE','Home');
 
 
-// 获取网站所属用户名
-$prefix_array = explode('.',$_SERVER['HTTP_HOST']);
-$_SESSION['prefix']  =  $prefix_array['0'];
+// // 获取网站所属用户名
+// $prefix_array = explode('.',$_SERVER['HTTP_HOST']);
+// $_SESSION['prefix']  =  $prefix_array['0'];
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 
