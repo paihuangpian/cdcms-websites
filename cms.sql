@@ -127,7 +127,7 @@ create table if not exists `cms_message`(
 
 
 --模板分类表
-create table if not exists `tpl_type`(
+create table if not exists `template_type`(
 	`id` int unsigned not null auto_increment primary key COMMENT 'id',
 	`name` varchar(255) COMMENT '模板分类名称',
 	`pid` int COMMENT '模板父id',
@@ -137,3 +137,17 @@ create table if not exists `tpl_type`(
 
 
 insert into tpl_type values(1,'服装、饰品、个人护理',0,123123123);
+
+
+
+--海报图片表
+create table if not exists `cms_posters`(
+	`posters_id` int unsigned not null auto_increment primary key COMMENT 'id',
+	`posters_userid` int unsigned not null COMMENT '用户id',
+	`posters_type` varchar(20) COMMENT '页面标识',
+	`posters_name` varchar(255) COMMENT '名称',
+	`posters_url` varchar(255) COMMENT '链接',
+	`posters_pic` varchar(255) COMMENT '图片',
+  	`posters_status` tinyint(1) DEFAULT '0' COMMENT '状态 0显示 1不显示',
+  	`posters_addtime` int unsigned default null COMMENT '添加时间'
+)engine=innodb default charset=utf8;

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <head id="Head">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="author" content="order by dede58.com" />
 <title>{{$configs['config_title']}}</title>
 <meta name="description" content="{{$configs['config_description']}}" />
 <meta name="keywords" content="{{$configs['config_keywords']}}" />
@@ -88,7 +87,13 @@
         </div>
       </div>
       <!-- E module-full-screen --><!-- Start_Module_124633 --><a name="24903" id="24903"></a><!-- S module-full-screen -->
-      <div class="module-full-screen module-full-screen-hl module-full-screen-bg-img" style="background-image:url({{$tpl_path}}Images/677b0a3e-029c-43ee-952e-506b804a4a54.jpg);">
+     
+
+      <if condition="($posters['posters_pic'])">
+       <div class="module-full-screen module-full-screen-hl module-full-screen-bg-img" style="background-image:url({{$host}}{{$posters['posters_pic']}});">
+       <else /> 
+      <div class="module-full-screen module-full-screen-hl module-full-screen-bg-img" style="background-image:url({{$tpl_path}}Images/677b0a3e-029c-43ee-952e-506b804a4a54.jp);">
+       </if>
         <div class="module-inner not-animated" data-animate="fadeInDown" data-delay="200">
           <div class="page-width">
             <div id="a1portalSkin_ctr124633124633_mainArea" class="module-full-screen-content"><!-- Start_Module_124633 -->

@@ -16,7 +16,12 @@
               <div class="carousel-item">
                 <div class="carousel-img">
                 <a href="javascript:;" target="">
-                <img src="{{$tpl_path}}Images/08b667bf-6981-45c0-bcf4-27b0ae8a542c_0_300.jpg" height="300" alt="广告轮换1" /></a></div>
+                <if condition="($posters['posters_pic'])">
+                  <img src="{{$host}}{{$posters['posters_pic']}}" height="300" alt="广告轮换1" />
+                 <else /> 
+               <img src="{{$tpl_path}}Images/08b667bf-6981-45c0-bcf4-27b0ae8a542c_0_300.jpg" height="300" alt="{{$posters['posters_name']}}" />
+                 </if>
+                </a></div>
               </div>
             </div>
             <div class="carousel-btn carousel-btn-fixed" id="carousel-page-124653"></div>

@@ -27,7 +27,7 @@ class IndexsController extends CommonController
             }
 
             $news_article = M('Cms_article');
-            $articles_news = $news_article->where("($columnid) and article_status = 0 and article_userid = ".session('userid'))->order('article_id desc')->limit('20')->select();
+            $articles_news = $news_article->where("($columnid) and article_status = 0 and article_userid = ".session('userid'))->order('article_id desc')->limit('30')->select();
             $this->assign('articles_news',$articles_news);
         }
 
@@ -41,14 +41,21 @@ class IndexsController extends CommonController
                 $columnids .= "{$ors}article_column = {$v}";
             }
             $product_article = M('Cms_article');
-            $articles_product = $product_article->where("($columnids) and article_status = 0 and article_userid =" .session('userid'))->order('article_id desc')->limit('20')->select();
+            $articles_product = $product_article->where("($columnids) and article_status = 0 and article_userid =" .session('userid'))->order('article_id desc')->limit('30')->select();
             $this->assign('articles_product',$articles_product);
 
         }
 
+
+        //baauer图
+        $posters = M('Cms_posters');
+        $poster = $posters->where("posters_type = 'index' and posters_status = 0 and posters_userid = ".session('userid'))->find();
+        $this->assign('posters',$poster);
+
+
     	$this->display();
     }
-
+   
     /**
      * 新闻资讯列表
      */
@@ -108,6 +115,14 @@ class IndexsController extends CommonController
             $related = 15;
         }
         $related_articles = $cms_article->where("(article_column = {$id} {$str}) and article_status = 0 and article_userid =".session('userid'))->limit($related)->select(); 
+
+        //baauer图
+        $posters = M('Cms_posters');
+        $poster = $posters->where("posters_type = 'news' and posters_status = 0 and posters_userid = ".session('userid'))->find();
+        $this->assign('posters',$poster);
+
+
+        $this->assign('posters',$poster);
         $this->assign('number',$number);//页码数
         $this->assign('count',$count);//总条数
         $this->assign('show',$show);
@@ -177,6 +192,14 @@ class IndexsController extends CommonController
             $related = 15;
         }
         $related_articles = $cms_article->where("(article_column = {$id} {$str}) and article_status = 0 and article_userid =".session('userid'))->limit($related)->select(); 
+
+        //baauer图
+        $posters = M('Cms_posters');
+        $poster = $posters->where("posters_type = 'product' and posters_status = 0 and posters_userid = ".session('userid'))->find();
+        $this->assign('posters',$poster);
+
+
+
         $this->assign('show',$show);
         $this->assign('number',$number);//页码数
         $this->assign('count',$count);//总条数
@@ -255,7 +278,14 @@ class IndexsController extends CommonController
         $related = 15;
        }
         $related_articles = $cms_article->where("article_column = {$article['article_column']} and article_status = 0 and article_userid = ".session('userid'))->limit($related)->select();
-        // dump($related_articles);
+        
+
+        //baauer图
+        $posters = M('Cms_posters');
+        $poster = $posters->where("posters_type = 'news_show' and posters_status = 0 and posters_userid = ".session('userid'))->find();
+        $this->assign('posters',$poster);
+
+
 
        if($article){
                 $cms_article->where("article_id = {$id}")->setInc('article_clicks');//浏览量
@@ -333,6 +363,12 @@ class IndexsController extends CommonController
        }
         $related_articles = $cms_article->where("article_column = {$article['article_column']} and article_status = 0 and article_userid = ".session('userid'))->limit($related)->select();
 
+
+        //baauer图
+        $posters = M('Cms_posters');
+        $poster = $posters->where("posters_type = 'product-show' and posters_status = 0  and posters_userid = ".session('userid'))->find();
+        $this->assign('posters',$poster);
+
         if($article){
                 
                 $cms_article->where("article_id = {$id}")->setInc('article_clicks');//浏览量
@@ -382,6 +418,11 @@ class IndexsController extends CommonController
          $position .= $current = "<a href='".U("{$column['column_type']}",array('id'=>$column['column_id']))."'>{$column['column_name']}</a>";
          $this->assign('current',$current);//当前
          $this->assign('position',$position);//导航
+
+         //baauer图
+        $posters = M('Cms_posters');
+        $poster = $posters->where("posters_type = 'cover' and posters_status = 0 and posters_userid = ".session('userid'))->find();
+        $this->assign('posters',$poster);
 
         if($column){
                 $this->assign('column',$column);
