@@ -1,0 +1,58 @@
+
+<html class="uk-notouch">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{$column['column_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+
+</head>
+<body onLoad="init()">
+ 
+ 
+ 
+<div style="text-align:center;font-size:30px;margin-top:20px;color:black" >{{$current_column['column_name']}}</div>
+ 
+<div class="nav-sub">
+<div class="sub-nav">
+ <foreach name="current_column['second']" item="v">
+<a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$vo['column_name']}}" target="_self">{{$v['column_name']}}
+</a>
+</foreach>
+</div>
+</div>
+ 
+<div class="uk-container-center pro-page">
+<div class="uk-grid uk-grid-medium">
+<foreach name="articles" item="v">
+<div class="uk-width-large-1-4 uk-width-medium-1-3 uk-width-small-1-2">
+<div class="pro-box">
+<a href="{{:U('product',array('id'=>$v['article_id']))}}" title="{{$v['article_title']}}"><img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}" width="276" height="206"></a>
+<h4 class="pro-title">{{$v['article_title']}}</h4>
+<p>{{$v['article_description']}}
+...</p>
+</div>
+</div>
+</foreach>
+
+
+
+
+
+
+
+
+</div> 
+<div class="pages"> 
+<ul>
+<li><span class="pageinfo" style="margin:0 auto">共 {{$number}} 页 {{$count}} 条记录 {{$show}}</span></li>
+</ul>
+</div><br>
+</div>
+ 
+ <include file="footer" />
+  </div>
+  <div style="text-align:center">{{$yundi}}</div>
+</body></html>

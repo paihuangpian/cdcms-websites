@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{$column['column_title']}}</title>
+<include file="header" />
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+</head>
+<body>
+
+<style>.navbar-default .navbar-nav>.active_1,.navbar-default .navbar-nav>.active_1:hover,.navbar-default .navbar-nav>.active_1:focus{color:#ffffff;background-color:#03acda;}</style>
+
+<section class="view-content" style="margin-top:100px;">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<foreach name="articles" item="v">
+<div class="view-content-left animated bounceIn" data-animation="bounceIn" data-delay="0" style="opacity: 0;">
+ <a href="{{:U('news',array('id'=>$v['article_id']))}}">
+</a><div class="gallery-item">
+<a href="{{:U('news',array('id'=>$v['article_id']))}}"> 
+<img src="{{$host}}{{$v['article_pic']}}" class="img-responsive">
+</a><div class="info"><a href="{{:U('news',array('id'=>$v['article_id']))}}">
+</a><div class="info-con"><a href="{{:U('news',array('id'=>$v['article_id']))}}"></a></div>
+</div>
+</div>
+<div class="content1">
+<h4><a href="{{:U('news',array('id'=>$v['article_id']))}}">{{$v['article_title']}}</a></h4>
+<p>{{$v['article_description']}}</p>
+<span class="pull-left"><i class="fa fa-clock-o"></i>{{$v['article_time']|date="Y-m",###}}</span> </div>
+<div class="clearfix"></div>
+</div>
+</foreach>
+
+<ul class="pager">
+<li><span class="pageinfo">共 {{$number}} 页 {{$count}} 条记录 {{$show}}</span></li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+  <include file="footer" />
+  </div>
+</body>
+</html>

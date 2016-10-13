@@ -11,6 +11,7 @@
 html {
   background-image: url({{$tpl_path}}Images/bg-rep-01.jpg);
 }
+.first-level{{$column['column_id']}} strong{color:#f00;}
 </style>
 </head>
 <body class="font-zh-CN" style="background:url({{$tpl_path}}Images/bg-img-01.jpg) top center fixed;">
@@ -53,17 +54,17 @@ html {
     <div class="page-width clearfix">
       <div class="main-nav clearfix" skinobjectzone="menu_834">
         <ul class="sf-menu">
-          <li class='current'>
+          <li class='navhome'>
           <a class="first-level" href="{{$host2}}" target="">
           <strong >{{$configs['config_home']}}</strong></a><i></i></li>
 
-         <foreach name="columns" item='v'>
+         <foreach name="columns" item='v' key="k">
           <li>
-          <a class="first-level" href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" target=""><strong >
+          <a class="first-level{{$v['column_id']}}" href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" target=""><strong >
           {{$v['column_name']}}</strong></a><i></i>
             <ul class="">
-               <foreach name="v['second']" item="vo">
-              <li class=""><a class="" href="{{:U($vo['column_type'],array('id'=>$vo['column_id']))}}" target=""><strong>{{$vo['column_name']}}</strong></a></li>
+               <foreach name="v['second']" item="vo" key="k">
+              <li class="nav{{$k}}"><a class="" href="{{:U($vo['column_type'],array('id'=>$vo['column_id']))}}" target=""><strong>{{$vo['column_name']}}</strong></a></li>
               </foreach>
             </ul>
           </li>
@@ -96,7 +97,7 @@ html {
     <div class="drawer-section drawer-section-menu">
       <div class="touch-menu" skinobjectzone="menu_2150">
             <ul>
-            <li><a href="{{$host2}}"><span>首页</span></a></li>
+            <li><a href="{{$host2}}"><span>{{$configs['config_home']}}</span></a></li>
             <!-- 导航 -->
             <foreach name="columns" item='v'>
             <li><a href="javascript:;"><span>{{$v['column_name']}}</span><i class="touch-arrow-down"></i></a>

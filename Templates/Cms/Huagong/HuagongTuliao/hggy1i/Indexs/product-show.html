@@ -1,0 +1,58 @@
+
+<html class="uk-notouch">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{$article['article_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+<meta http-equiv="X-UA-Compatible" content="edge">
+
+</head>
+<body onLoad="init()">
+ 
+
+  
+<div class="uk-container-center breadcrumb">
+<span class="breadcrumbs">
+您现在的位置：<a href='/'>{{$position}}</a> 
+</span>
+</div>
+<div class="product-info uk-container-center">
+<div class="uk-grid uk-grid-collapse">
+<div class="uk-width-medium-1-2">
+ 
+<div class="uk-slidenav-position" data-uk-slideshow="">
+
+</div>
+ 
+</div>
+<div class="uk-width-medium-1-2 bkf1" style="width:100%;">
+<div class="article-info">
+<h2>
+{{$article['article_title']}}
+</h2>
+<p>
+{{$article['article_text']}}
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+ 
+  <include file="footer" />
+  </div>
+  <script>
+    for(var i = 0;i <= $('.product-info img').length;i++){
+        
+        $('.product-info img').eq(i).attr('src','{{$host}}' + $('.product-info img').eq(i).attr('src'))
+    }
+
+ </script>
+ <div style="text-align:center">{{$yundi}}</div>
+</body>
+</html>

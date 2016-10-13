@@ -4,7 +4,6 @@
 <title>{{$configs['config_title']}}</title>
 <meta name="description" content="{{$configs['config_description']}}" />
 <meta name="keywords" content="{{$configs['config_keywords']}}" />
-
 <include file="header" />
 <!-- ==================== S header ==================== -->
   <div id="a1portalSkin_headerAreaA" class="header">
@@ -66,13 +65,13 @@
               <div class="portfolio-list product-list">
                 <ul class="column clearfix">
                   <volist name="articles_product" id="vo" offset="0" length='12'>
-                      <li class='col-4-1 not-animated' data-animate='fadeInUp'>
+                      <li class='col-4-1 not-animated' data-animate='fadeInUp' style="white-space:nowrap;Overflow:hidden;">
                       <div class="product-item">
                       <div class="portfolio-img">
                       <a href="{{:U('Indexs/product',array('id'=>$vo['article_id']))}}" target="_blank">
-                      <img src="{{$host}}{{$vo['article_pic']}}" alt="{{$vo['article_title']}}}"/></a></div>
+                      <img src="{{$host}}{{$vo['article_pic']}}" alt="{{$vo['article_title']}}}" /></a></div>
                       <div class="portfolio-title">
-                      <h2><a href="{{:U('Indexs/product',array('id'=>$vo['article_id']))}}" target="_blank">{{$vo['article_title']}}}</a></h2>
+                      <h2><a href="{{:U('Indexs/product',array('id'=>$vo['article_id']))}}" style="white-space:nowrap;Overflow:hidden;"  target="_blank">{{$vo['article_title']}}</a></h2>
                       </div>
                       </div>
                       </li>
@@ -92,7 +91,7 @@
       <if condition="($posters['posters_pic'])">
        <div class="module-full-screen module-full-screen-hl module-full-screen-bg-img" style="background-image:url({{$host}}{{$posters['posters_pic']}});">
        <else /> 
-      <div class="module-full-screen module-full-screen-hl module-full-screen-bg-img" style="background-image:url({{$tpl_path}}Images/677b0a3e-029c-43ee-952e-506b804a4a54.jp);">
+      <div class="module-full-screen module-full-screen-hl module-full-screen-bg-img" style="background-image:url({{$tpl_path}}Images/677b0a3e-029c-43ee-952e-506b804a4a54.jpg);">
        </if>
         <div class="module-inner not-animated" data-animate="fadeInDown" data-delay="200">
           <div class="page-width">
@@ -153,7 +152,7 @@
 
                               <div class="headlines-others not-animated" data-animate="fadeInUp" data-delay="400"><!-- S entry-list -->
                                 <div class="entry-list entry-list-time-hl entry-set-time-hl">
-                                <volist name="articles_wens" id="v" offset="1" length='4'>
+                                <volist name="articles_news" id="v" offset="1" length='4'>
                                   <!-- S entry-item -->
                                   <div class="entry-item">
                                     <div class="time">
@@ -187,7 +186,7 @@
                           <div id="a1portalSkin_ctr124634124634_Column2C67A33_ctr124636124636_mainArea" class="module-content"><!-- Start_Module_124636 --><!-- S article-list-row -->
                             <div class="article-list-row">
                               <ul>
-                               <volist name="articles_wens" id="v" offset="5" length='11'>
+                               <volist name="articles_news" id="v" offset="5" length='11'>
                                 <li><a class="article-title" href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></li>
                                </volist>
                               </ul>

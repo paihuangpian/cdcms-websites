@@ -1,0 +1,61 @@
+
+<html class="uk-notouch">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{$column['column_title']}}</title>
+<meta http-equiv="X-UA-Compatible" content="edge">
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+</head>
+<body onLoad="init()">
+ 
+
+<div id="my-id" class="uk-offcanvas"> </div>
+</div>
+
+
+ 
+ <div style="text-align:center;font-size:30px;margin-top:20px;color:black" >{{$current_column['column_name']}}</div>
+<div class="nav-sub">
+<div class="sub-nav">
+ <foreach name="current_column['second']" item="v">
+<a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$vo['column_name']}}" target="_self">{{$v['column_name']}}
+</a>
+</foreach>
+</div> 
+</div>
+ 
+<div class="uk-container-center">
+<p><br><br>
+&nbsp;<span style="color: rgb(102, 102, 102); font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 26px;">
+{{$column['column_text']}}
+
+
+
+</span>
+</p>
+</div>
+<div class="uk-grid uk-grid-collapse">
+<div class="uk-width-medium-1-2">
+<div class="uk-visible-small"><p><br style="text-indent: 2em; text-align: left;"></p> </div>
+</div>
+</div>
+<br><br><br>
+ <include file="footer" />
+  </div>
+<div style="text-align:center">{{$yundi}}</div>
+<script>
+ var rep = /^http/;
+    for(var i = 0;i <= $('.uk-container-center img').length;i++){
+      if(!rep.test($('.uk-container-center img').eq(i).attr('src'))){
+        $('.uk-container-center img').eq(i).attr('src','{{$host}}' + $('.uk-container-center img').eq(i).attr('src'))
+        
+      }
+        
+    }
+
+ </script>
+</body>
+</html>

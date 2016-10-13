@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=yes">
+<title>{{$configs['config_title']}}</title>
+<meta name="description" content="{{$configs['config_description']}}" />
+<meta name="keywords" content="{{$configs['config_keywords']}}" />
+<meta name="author" content="order by dede58.com"/>
+<meta name="renderer" content="webkit">
+<include file="header" /> 
+
+</head>
+<body>
+
+<div class="page">
+<div class="rowFluid">
+<div class="span12">
+<div class="main">
+<script src="{{$tpl_path}}Js/login.js"></script>
+<div class="banner">
+<div class="rowFluid">
+<div class="span12">
+<div class="owl-demo">
+<foreach name="carousel" item="v" key="k">
+<div class="item">
+
+<li class=" <if condition='($k eq 0)'>active</if>" style="height: 456px;">
+<a href="{{$host}}{{$v['carousel_url']}}" target="_blank" title="">
+<img src="{{$host}}{{$v['carousel_pic']}}" alt="{{$v['carousel_name']}}"></a></li>
+
+
+</div>
+</foreach>
+
+</div>
+</div>
+</div>
+<div id="container" class="mpage">
+<div id="anitOut" class="anitOut"></div>
+</div>
+</div>
+
+
+<div class="index_product">
+<div class="rowFluid">
+<div class="span12">
+<div class="container">
+<div class="all_title1 wow fadeInDown">
+<h3 class="title">我们的产品</h3>
+<div class="text">OUR PRODUCT</div>
+</div>
+
+<div class="rowFluid">
+<div class="index_product_content">
+<volist name="articles_product" id="v" offset="0" length='6'>
+<div class="span4 col-md-6 col-xs-12 wow fadeInDown">
+<a class="index_product_list" title="响应式企业网站建设">
+<div class="list_backimg list_backimg1">
+<div class="list_img">
+<img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}}"/> </div>
+
+<div class="list_txt">
+<div class="list_title" style="color:black;">{{$v['article_title']}}}</div>
+<div class="list_text" style="color:black;">{{$v['article_description']}}</div>
+</div>
+
+</div>
+</a>
+</div>
+</volist>
+</div>
+</a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="news_center">
+<div class="rowFluid">
+<div class="span12">
+<div class="container">
+<div class="all_title1 wow fadeInUp">
+<h3 class="title">新闻中心</h3>
+<div class="text">NEWS TRENDS</div>
+</div>
+<div class="rowFluid">
+<div class="news_center_content">
+ <volist name="articles_news" id="v" offset="0" length='1'>
+<div class="span4 col-sm-12 wow fadeInDown" data-wow-delay="1.2s">
+<div class="news_center_list">
+<div class="news_center_list_img">
+<img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}"/> </div>
+<div class="news_center_list_title">{{$v['article_title']}}</div>
+
+
+<ul>
+<li class="span12">
+<a  class="span8" href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" title="{{$v['article_title']}} "><i class="fa fa-angle-right"></i>{{$v['article_description']}}</a>
+<div style="font-size: 12px; color: #ccc; float: right; margin-top: 3px;">{{$v['article_time']|date="Y-m",###}}</div>
+</li>
+</volist>
+
+</ul>
+</div>
+</div>
+<volist name="articles_news" id="v" offset="2" length='1'>
+<div class="span4 col-sm-12 wow fadeInUp" data-wow-delay="0.7s">
+<div class="news_center_list">
+<div class="news_center_list_img">
+<img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}"/> </div>
+<div class="news_center_list_title">{{$v['article_title']}}</div>
+
+<ul>
+
+<li class="span12"> <a href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" title="{{$v['article_title']}} " class="span8" ><i class="fa fa-angle-right"></i>{{$v['article_description']}} </a>
+<div style="font-size: 12px; color: #ccc; float: right; margin-top: 3px;">{{$v['article_time']|date="Y-m",###}}</div>
+</li>
+</volist>
+
+</ul>
+</div>
+</div>
+<volist name="articles_news" id="v" offset="3" length='1'>
+<div class="span4 col-sm-12 wow fadeInDown" data-wow-delay="1.3s">
+<div class="news_center_list">
+<div class="news_center_list_img"> <img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}"/> </div>
+<div class="news_center_list_title">{{$v['article_title']}}</div>
+
+<ul>
+<li class="span12"> <a href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" title="{{$v['article_title']}} "><i class="fa fa-angle-right"></i>{{$v['article_description']}} </a>
+<div style="font-size: 12px; color: #ccc; float: right; margin-top: 3px;">{{$v['article_time']|date="Y-m",###}}</div>
+</li>
+</volist>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ <include file="footer" />
+  </div>
+  <div style="text-align:center;">{{$yundi}}</div>
+</body>
+</html>

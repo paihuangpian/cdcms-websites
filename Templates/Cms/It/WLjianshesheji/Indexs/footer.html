@@ -1,0 +1,59 @@
+<script src="{{$tpl_path}}Js/effects.js"></script>
+<div class="footer wow fadeInUp">
+<div class="rowFluid">
+<div class="span12">
+<div class="container">
+<div class="footer_content">
+<div class="span4 col-xm-12">
+<div class="footer_list">
+<div class="span6 col-xm-12">
+<div class="quick_navigation">
+<div class="quick_navigation_title">快速导航</div>
+<ul>
+<li> <a href="{{$host2}}" title="{{$configs['config_home']}}">{{$configs['config_home']}}</a> </li>
+
+<foreach name="columns" item='v' key="k">
+<php>if($k <= 4){</php>
+<li><a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$v['column_name']}}">{{$v['column_name']}}</a></li>
+<php>}</php>
+</foreach>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="span4 col-xm-6 col-xs-12">
+<div class="footer_list">
+<div class="footer_link">
+<div class="footer_link_title">友情链接</div>
+<ul id="frientLinks">
+<foreach name="friendships" item="v">
+<li><a href="{{$v['friendship_url']}}" target='_blank'>{{$v['friendship_name']}}</a> </li>
+</foreach>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="span4 col-xm-6 col-xs-12">
+<div class="footer_list">
+<div class="footer_cotact">
+<div class="footer_cotact_title">联系方式</div>
+<ul>
+<li><span class="footer_cotact_type">地址：</span><span class="footer_cotact_content">{{$configs['config_address']}}</span></li>
+<li><span class="footer_cotact_type">电话：</span><span class="footer_cotact_content"><a href="tel:{{$configs['config_tel']}}" class="call">{{$configs['config_tel']}}</a></span></li>
+<li><span class="footer_cotact_type">邮箱：</span><span class="footer_cotact_content"><a class="__cf_email__" href="/cdn-cgi/l/email-protection">{{$configs['config_email']}}</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

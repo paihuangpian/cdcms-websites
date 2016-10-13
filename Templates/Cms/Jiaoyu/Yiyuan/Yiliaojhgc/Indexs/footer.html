@@ -1,0 +1,94 @@
+<div class="footer-container">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+<div class="foot-div foot-div1">
+<p> {{$configs['config_name']}} </p>
+<h2> {{$configs['config_tel']}} </h2>
+</div>
+<div class="foot-div foot-div2">
+<h4> {{$configs['config_name']}} </h4>
+<p> 电话：{{$configs['config_tel']}} </p>
+<p> 手机：{{$configs['config_phone']}} </p>
+<p> 传真：{{$configs['config_tel']}} </p>
+<p> 邮箱：<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="553431383c3b1531303130606d7b363a38">{{$configs['config_email']}}</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> </p>
+<p> {{$configs['config_address']}}</p>
+</div>
+<div class="foot-div foot-div3">
+<script src="{{$tpl_path}}Js/loader.js" widget="shareqq" charset="utf-8">
+        </script>
+<script widget="shareqq" charset="utf-8" src="{{$tpl_path}}Js/shareqq.js?t=20121127">
+        </script>
+<a title="微信" class="ewm-a"> <img src="/templets/default/images/wx.png">
+<div class="ewm"> <img src="/uploads/allimg/160830/1-160S01H9230-L.png"> </div>
+</a> <a href="" title="微博"> <img src="/templets/default/images/wb.png"> </a>
+<p>
+
+</div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+<div>
+<h4> 认真聆听您的需求和建议是我们最重要的工作之一 </h4>
+<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post"/>
+<input type="hidden" name="diyid" value="1"/>
+<input type="hidden" name="do" value="2"/>
+<li>
+<input type="text" class="form-control" name='xingming' id='xingming'placeholder="姓名">
+                </li>
+                <li>
+                  <input type="text" class="form-control" name='dianhua' id='dianhua' placeholder="电话">
+                </li>
+                <li>
+                  <textarea class="form-control" rows="3" name='lynr' id='lynr' placeholder="留言">
+         </textarea>
+                </li>
+                <input type="hidden" name="dede_fields" value="xingming,text;dianhua,text;youxiang,text;lynr,multitext" />
+                <input type="hidden" name="dede_fieldshash" value="dfc945521441f5829cade7739bdc7541" />
+                <li class="foot-li"> <span style="text-align: center"></span>
+                  <input type="submit" name="submit" value="提 交" class="form-control" style='width:100%;height:80' />
+                </li>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+   $(document).ready(function() {
+    $("#flip").click(function() {
+     $(".footer-container").slideToggle("slow");
+    });
+
+    //提交留言信息
+    $("#publish").click(function() {
+     var name = $("input[name='name']").val();
+     var phone = $("input[name='phone']").val();
+     if (phone == '') {
+      alert('请输入联系方式');
+      return false;
+     }
+     var Email = $("input[name='Email']").val();
+     var content = $("textarea[name='content']").val();
+     if (content == '') {
+      alert('请输入留言内容');
+      return false;
+     }
+     $.post("#", {
+      "name": name,
+      "phone": phone,
+      "Email": Email,
+      "content": content,
+     },
+     function(data) {
+      if (data == "1") {
+       alert('提交成功');
+       window.location.reload();
+      }
+     });
+    });
+
+   });
+  </script>

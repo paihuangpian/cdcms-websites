@@ -1,0 +1,50 @@
+
+<html class="uk-notouch"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<title>{{$article['article_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+</head>
+<body onLoad="init()">
+ 
+<div class="uk-container-center breadcrumb">
+<span class="breadcrumbs">
+您现在的位置：<a href='/'>{{$position}}</a>
+</span>
+</div>
+ 
+<div class="article-body uk-container-center">
+<h2 class="article-title">{{$article['article_title']}} &nbsp;&nbsp;&nbsp;&nbsp;<span class="n-date">DATE: {{$article['article_time']|date='Y-m-d',###}}</span></h2>
+<div class="article-content">
+<p><p style="margin: 15px 0px; color: rgb(102, 102, 102); font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 26px;">
+&nbsp; {{$article['article_text']}}</p>
+
+
+<div>
+
+&nbsp;</div>
+</p><p><br></p></div>
+<style>#uk-grid>li:nth-child(1),#uk-grid>li:nth-child(2){
+margin: auto;
+}
+</style>
+<div class="uk-grid uk-grid-collapse nextpage" id="uk-grid">
+{{$listitem}}
+
+</div>
+</div>
+ 
+ <include file="footer" />
+  </div>
+    <script>
+    for(var i = 0;i <= $('.product-info img').length;i++){
+        
+        $('.article-content img').eq(i).attr('src','{{$host}}' + $('.article-content img').eq(i).attr('src'))
+    }
+
+ </script>
+ <div style="text-align:center">{{$yundi}}</div>
+</body></html>

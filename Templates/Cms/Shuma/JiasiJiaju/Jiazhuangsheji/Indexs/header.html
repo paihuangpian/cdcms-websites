@@ -1,0 +1,18 @@
+<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+<link rel="stylesheet" href="{{$tpl_path}}Css/style-light.css">
+<div class="header">
+<div class="logo"><a href="{{$host2}}"><img src="{{$host}}{{$configs['config_logo']}}" alt="{{$configs['config_name']}}"></a> </div>
+<div class="nav">
+<div class="nav-icon"></div>
+<div class="nav-bg"></div>
+<ul>
+<li class='on'><a href="{{$host2}}" target="_self" title="{{$configs['config_home']}}">{{$configs['config_home']}}</a> </li>
+<foreach name="columns" item='v' key="k">
+<php>if($k <= 4){</php>
+<li><a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$v['column_name']}}">{{$v['column_name']}}</a></li>
+<php>}</php>
+</foreach>
+</ul>
+<div class="home-info"></div>
+</div>
+</div>

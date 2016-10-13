@@ -1,0 +1,40 @@
+
+<html lang="zh-cn">
+<head>
+<script src="{{$tpl_path}}Js/jquery.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{$article['article_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+<style type="text/css">.header{background-color:#fff;}.nav-bg,.slider .btn-prev:hover,.slider .btn-next:hover,.banner-text span a,.pic-box:hover p,.btn-back:hover,.btn-prev2:hover,.btn-next2:hover,.sub-nav .sub-on a,.sub-nav li a:hover,.formBtn button:hover,.nav li a:after,.nav .on a:after{background-color:#a6cc00;}.news-list-info:hover h4,.news-more a:hover{color:#a6cc00;}.news-more a:hover,.form input:focus,.form textarea:focus{border-color:#a6cc00;}body{background-image:url(../../templets/default/css/bg.jpg);}</style>
+</head>
+
+<body>
+
+<div class="content">
+<div class="img-and-text">
+<div class="sub-nav">
+<h3>{{$article['article_title']}}</h3>
+</div>
+
+<div class="banner-img" style="color: rgb(0, 0, 0); font-family: tt_1, Arial, 微软雅黑; font-size: 14px; line-height: 22px;" id="qwe">
+{{$article['article_text']}}
+</div>
+</div>
+</div>
+
+
+ <script>
+    for(var i = 0;i <= $('#qwe img').length;i++){
+        
+        $('#qwe img').eq(i).attr('src','{{$host}}' + $('#qwe img').eq(i).attr('src'))
+    }
+
+ </script>
+ <include file="footer" />
+  </div>
+ <div style="text-align:center">{{$yundi}}</div>
+</body>
+</html> 

@@ -1,0 +1,55 @@
+ <link rel="stylesheet" href="{{$tpl_path}}Css/uikit.css">
+<link rel="stylesheet" href="{{$tpl_path}}Css/iven.css">
+<link rel="stylesheet" href="{{$tpl_path}}Css/slideshow.css">
+<link rel="stylesheet" href="{{$tpl_path}}Css/slidenav.css">
+<link rel="stylesheet" href="{{$tpl_path}}Css/responsive.css">
+<script src="{{$tpl_path}}Js/jquery-1.11.1.min.js"></script>
+<script src="{{$tpl_path}}Js/uikit.min.js"></script>
+<script src="{{$tpl_path}}Js/slideshow.js"></script>
+<script src="{{$tpl_path}}Js/slideshow-fx.min.js"></script>
+<div class="uk-container-center header">
+<div class="uk-grid">
+<div class="uk-width-2-3 uk-width-large-3-5 uk-width-medium-1-2 uk-width-small-1-3">
+<a href="{{$host2}}" title="" class="logo">
+<img src="{{$host}}{{$configs['config_logo']}}" alt="{{$configs['config_name']}}"></a></div>
+<div class="uk-hidden-small uk-width-large-1-5 uk-width-medium-1-4 uk-width-small-1-3">
+
+</div>
+<div class="uk-width-1-3 uk-width-large-1-5 uk-width-medium-1-4 uk-width-small-1-3">
+
+</div>
+</div>
+</div>
+<nav class="uk-navbar uk-visible-large">
+<div class="uk-container-center menu">
+<ul class="uk-navbar-nav">
+<li><a href="{{$host2}}" title="{{$configs['config_home']}}" target="_self"> <span>{{$configs['config_home']}}</span></a></li>
+<foreach name="columns" item='v' key="k">
+<php>if($k <= 4){</php>
+<li><a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" target="_self"><span> {{$v['column_name']}}</span></a></li>
+<php>}</php>
+</foreach>
+</ul>
+</div>
+</nav>
+
+<nav class="uk-navbar uk-hidden-large mobile-nav">
+ 
+<a href="#my-id" data-uk-offcanvas></a>
+ 
+<button class="uk-button" data-uk-offcanvas="{target:'#my-id'}">网站栏目</button>
+ 
+<div id="my-id" class="uk-offcanvas">
+<div class="uk-offcanvas-bar">
+<ul class="uk-nav uk-nav-offcanvas" data-uk-nav="">
+<li><a href="/" title="首页" target="_self">首页</a></li>
+<li><a href="/a/gy/" title="关于我们" target="_self">关于我们</a></li><li><a href="/a/news/" title="新闻中心" target="_self">新闻中心</a></li><li><a href="/a/cp/" title="产品中心" target="_self">产品中心</a></li><li><a href="/a/lx/" title="联系我们" target="_self">联系我们</a></li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+ 
+<div id="my-id" class="uk-offcanvas"> </div>
+</div>
+ 

@@ -1,0 +1,124 @@
+
+<html lang="zh-CN" xmlns:wb="http://www.dede58.com"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
+<title>{{$column['column_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+</head>
+<body>
+
+
+<section class="about-nav project">
+<a href="{{:U($current_column['column_type'],array('id'=>$current_column['column_id']))}}" style="margin-top: 52px;">{{$current_column['column_name']}}</a>
+<foreach name="current_column['second']" item="v">
+<a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}">{{$v['column_name']}}</a>
+</foreach>
+</section>
+<section class="about-us case-show">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 about-top">
+
+<h3><strong>{{$position}}</strong></h3>
+</div>
+</div>
+</div>
+<div class="case-show-anl news-ent text-left">
+<div class="container">
+<foreach name="articles" item="v">
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 undefined">
+<div class="item" title="">
+<a href="{{:U('news',array('id'=>$v['article_id']))}}">
+<img src="{{$host}}{{$v['article_pic']}}">
+<li>{{$v['article_time']|date="Y-m",###}}</li>
+<h4> {{$v['article_title']}}</h4>
+<p> {{$v['article_description']}}</p>
+</a>
+</div>
+</div>
+</foreach>
+</div>
+</div>
+
+<ul class="pager">
+<li><span class="pageinfo">共 {{$number}} 页 {{$count}} 条记录 {{$show}}</span></li>
+</ul>
+</section>
+<footer class="about-foot">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 about-foot-div1">
+<div clas="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-left">
+
+<h4> {{$configs['config_name']}} </h4>
+<p> 电话：{{$configs['config_tel']}} </p>
+<p> 手机：{{$configs['config_phone']}} </p>
+<p> 传真：{{$configs['config_tel']}} </p>
+<p>邮箱：<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c1a0a5aca8af81a5a4a5a4f4f9efa2aeac">{{$configs['config_email']}}</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+<p>{{$configs['config_address']}}</p>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right">
+<p> {{$configs['config_name']}}</p>
+<h2>{{$configs['config_tel']}}</h2>
+</div>
+</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 about-foot-div2">
+<div clas="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-left">
+
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right">
+<script src="/templets/default/js/loader.js" widget="shareqq" charset="utf-8"></script><script widget="shareqq" charset="utf-8" src="/templets/default/js/shareqq.js?t=20121127"></script>
+<a title="微信" class="ewm-a"><img src="/templets/default/images/wx.png"><div class="ewm ewm-2"><img src="/uploads/allimg/160830/1-160S01H9230-L.png"><p>扫一扫分享二维码</p></div></a>
+<a href="" title="微博"><img src="/templets/default/images/wb.png"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+ 
+<script> 
+      $(document).ready(function(){
+        $("#flip").click(function(){
+          $(".footer-container").slideToggle("slow");
+        });
+        
+        //提交留言信息
+        $("#publish").click(function(){
+            var name = $("input[name='name']").val();
+            var phone = $("input[name='phone']").val();
+            if (phone == '') {
+                alert('请输入联系方式');
+                return false;
+            }
+            var Email = $("input[name='Email']").val();
+            var content = $("textarea[name='content']").val();
+            if (content == '') {
+                alert('请输入留言内容');
+                return false;
+            }
+            $.post("http://www.china-szlf.cn/bgMessage/storeMessage", {
+                "name": name,
+                "phone": phone,
+                "Email": Email,
+                "content": content,
+            }, function(data){
+                if (data == "1") {
+                    alert('提交成功');
+                    window.location.reload();
+                }
+            });
+        });
+        
+      });
+      </script>
+ 
+ <div style="text-align:center">{{$yundi}}</div>
+</body>
+</html>

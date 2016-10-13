@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=yes">
+<title>{{$column['column_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+<meta name="renderer" content="webkit">
+ 
+
+</head>
+<body>
+
+
+
+<div class="page">
+<div class="rowFluid">
+<div class="span12">
+<div class="main">
+<div class="z_banner support_z_banner">
+<div class="rowFluid">
+<div class="span12">
+
+
+</div>
+</div>
+</div>
+<div class="support_type">
+<div class="rowFluid">
+<div class="span12">
+<div class="container">
+<div class="support_type_content">
+<div class="kzf-mod-center">
+<foreach name="current_column['second']" item="v">
+<div class="span2 col-xs-4">
+ <a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" class="support_type_list normal" title="{{$v['column_name']}}">{{$v['column_name']}}</a> </div>
+ </foreach>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="kzf-mod-new-container">
+
+<div class="rowFluid">
+<div class="span12">
+<div class="container" id="newslist">
+<foreach name="articles" item="v">
+<div class="rowFluid">
+<a href="{{:U('news',array('id'=>$v['article_id']))}}" class="uk-thumbnail">
+<div class="kzf-mod-new-li">
+<div class="span2">
+<div class="kzf-mod-new-time-box">
+<!-- <div class="kzf-mod-new-time-date"><span>10</span>/<span>01</span></div> -->
+<div class="kzf-mod-new-time-year">{{$v['article_time']|date="Y-m",###}}</div>
+</div>
+</div>
+<div class="span10">
+<div class="kzf-mod-new-box">
+<div class="kzf-mod-new-title">{{$v['article_title']}}</div>
+<div class="kzf-mod-new-text"> {{$v['article_description']}}</div>
+</div>
+</div>
+</div>
+</a> </div>
+</foreach>  
+
+</div>
+<style>
+ .kzf-mod-new-btn-more li{float: left;margin-left: 18px;}
+ .kzf-mod-new-btn-more>li:nth-child(1){
+ 	margin-left: 390px;
+ }
+</style>
+<div class="kzf-mod-new-btn-more"> 
+<li>共 {{$number}} 页 </li><li>{{$count}} 条记录</li>{{$show}}</a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<include file="footer" />
+  </div>
+<div style="text-align:center">{{$yundi}}</div>
+</body>
+</html>

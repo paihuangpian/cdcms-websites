@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=yes">
+<title>{{$configs['config_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+
+ 
+
+</head>
+<body>
+
+<div class="support_type" style="margin-top:137px;">
+<div class="rowFluid">
+<div class="span12">
+<div class="container">
+<div class="support_type_content">
+ <foreach name="current_column['second']" item="v">
+<div class="span2 col-xs-4"><a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$vo['column_name']}}" class="support_type_list normal">{{$v['column_name']}}</a> </div>
+</foreach>
+
+</div>
+</div>
+</div>
+<div class="case_show">
+<div class="rowFluid">
+<div class="span12">
+<div class="container">
+<div class="case_show_content">
+<foreach name="articles" item="v">
+<a class="case_show_list wow fadeInUp" style="display:block" href="{{:U('product',array('id'=>$v['article_id']))}}" title="{{$v['article_title']}}" title="{{$vo['column_name']}}">
+<div class="span7 col-xm-6 col-sm-12">
+<div class="case_show_pic"><img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}"/></div>
+</div>
+<div class="span5 col-xm-6 col-sm-12">
+<div class="case_show_brief">
+<h3 class="case_show_brief_title"><span></span>{{$v['article_title']}}</h3>
+<div class="case_show_brief_text">
+<p>{{$v['article_description']}}...</p>
+</div>
+
+</div>
+</div>
+</a>
+</foreach>
+
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+ <include file="footer" />
+  </div>
+  <div style="text-align:center">{{$yundi}}</div>
+</body>
+</html>

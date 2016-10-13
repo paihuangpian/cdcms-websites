@@ -32,7 +32,6 @@ class IndexsController extends CommonController
         }
 
 
-
         //分配产品信息
         $column_id2 = $cms_column->where("column_type = 'products' and column_status = 0 and column_userid = ".session('userid'))->getField('column_id',true);
         if($column_id2){
@@ -47,7 +46,7 @@ class IndexsController extends CommonController
         }
 
 
-        //baauer图
+        //banner图
         $posters = M('Cms_posters');
         $poster = $posters->where("posters_type = 'index' and posters_status = 0 and posters_userid = ".session('userid'))->find();
         $this->assign('posters',$poster);
@@ -81,6 +80,10 @@ class IndexsController extends CommonController
             $current_column_res['second'] = $cms_column->where("column_status = 0 and column_pid = {$current_column_res['column_id']} and column_userid = ".session('userid'))->select();
         }
         $this->assign('current_column',$current_column_res);
+
+         //分当前栏目id做选中当前导航用
+        $current_column_['column_id'] = $current_column_res['column_id'];
+        $this->assign('column',$current_column_);
 
 
         //分配面包屑导航
@@ -158,6 +161,10 @@ class IndexsController extends CommonController
         }
         $this->assign('current_column',$current_column_res);
 
+         //分当前栏目id做选中当前导航用
+        $current_column_['column_id'] = $current_column_res['column_id'];
+        $this->assign('column',$current_column_);
+
 
         //分配面包屑导航
         $position_name = $cms_column->where("column_id = {$column['column_pid']} and column_userid = ".session('userid'))->field('column_name,column_id')->find();
@@ -226,12 +233,16 @@ class IndexsController extends CommonController
             $column_ids = $cms_column->where("column_status = 0 and column_id = {$columnid['column_pid']} and column_userid = ".session('userid'))->find();//得到顶级栏目
             if($column_ids){
              $column_ids['second'] = $cms_column->where("column_status = 0 and column_pid = {$columnid['column_pid']} and column_userid = ".session('userid'))->select();//在用顶级栏目查询所有下级栏目
-
-             $this->assign('current_column',$column_ids);
+            $this->assign('current_column',$column_ids);
+             //分配当前所属栏目数据 做导航选中时用
+            $this->assign('column',$column_ids);
             }else{
                 $this->assign('current_column',$columnid);
+                //分配当前所属栏目数据 做导航选中时用
+                $this->assign('column',$columnid);
             }
        }
+    
 
 
        
@@ -316,10 +327,16 @@ class IndexsController extends CommonController
              $column_ids['second'] = $cms_column->where("column_status = 0 and  column_pid = {$columnid['column_pid']} and column_userid = ".session('userid'))->select();//在用顶级栏目查询所有下级栏目
 
              $this->assign('current_column',$column_ids);
+             //分配当前所属栏目数据 做导航选中时用
+            $this->assign('column',$column_ids);
             }else{
                 $this->assign('current_column',$columnid);
+                //分配当前所属栏目数据 做导航选中时用
+                $this->assign('column',$columnid);
             }
        }
+       
+
 
 
         //分配面包屑导航

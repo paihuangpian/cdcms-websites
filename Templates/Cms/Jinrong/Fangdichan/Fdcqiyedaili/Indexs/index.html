@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<head id="Head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="author" content="order by dede58.com"/>
+<title>{{$configs['config_title']}}</title>
+<meta name="description" content="{{$configs['config_description']}}" />
+<meta name="keywords" content="{{$configs['config_keywords']}}" />
+<meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/>
+<style>html{background-image:url(/skin/img/bg-rep-01.jpg);}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<include file="header" />
+</head>
+<body class="font-zh-CN" style="background:url(/skin/img/bg-img-05.jpg) top center fixed;">
+<form name="Form" method="post" action="/" id="Form" enctype="multipart/form-data" style="height:inherit">
+
+ </header>
+  
+<div id="a1portalSkin_headerAreaA" class="header"> <a name="17043" id="17043"></a>
+<div class="module-default">
+<div class="module-inner">
+<div id="a1portalSkin_ctr8966089660_mainArea" class="module-content">  
+<div class="slideshow carousel clearfix" style="height:550px; overflow:hidden;">
+<div id="carousel-89660">
+<foreach name="carousel" item="v" key="k">
+ <div class="carousel-item">
+<div class="carousel-img"><a href="javascript:;" target="">
+<img src="{{$host}}{{$v['carousel_pic']}}" alt="{{$v['carousel_name']}}" height="550"/></a></div>
+</div>
+</foreach>
+
+</div>
+<div class="carousel-btn carousel-btn-fixed" id="carousel-page-89660"></div>
+</div>
+<script type="text/javascript">
+ $(window).load(function(){
+  $("#carousel-89660").carouFredSel({                                
+   width       : '100%',
+   items  : { visible : 1 },
+   auto     : { pauseOnHover: true, timeoutDuration:5000 },
+   swipe  : { onTouch:true, onMouse:true },
+   pagination  : "#carousel-page-89660"
+   //prev   : { button:"#carousel-prev-89660"},
+   //next   : { button:"#carousel-next-89660"},
+   //scroll : { fx : "coverfade", duration : 1200, timeoutDuration : 1500 }
+  }); 
+ });
+</script>  </div>
+</div>
+</div>
+</div>
+  
+<section class="main">
+<div id="a1portalSkin_mainArea" class="full-screen"> <a name="17044" id="17044"></a> 
+<div class="module-full-screen" style="">
+<div class="module-inner">
+<div class="page-width">
+<div id="a1portalSkin_ctr8966189661_mainArea" class="module-full-screen-content"> 
+<div class="qhd-module">
+<div class="column">
+
+<!-- <div class="col-3-1">
+<div id="a1portalSkin_ctr8966189661_Column2C33A67_QHDCPM89661M1" class="qhd_column_contain"> <a name="17045" id="17045"></a>
+<div class="module-default module">
+<div class="module-inner">
+<div class="module-title-border clearfix"><div class="module-more-default float-right"><a href="/a/guanyuwomen/" target="">详情</a></div>
+<div class="module-title-content clearfix">
+<h3 style="" class="">关于我们</h3>
+</div> </div>
+<div id="a1portalSkin_ctr8966189661_Column2C33A67_ctr8966289662_mainArea" class="module-content"> 
+<div class="qhd-content"> <p> <a href="/a/guanyuwomen/"><img alt="" src="/skin/img/f12d2130-4de8-4293-a960-4d5df9a5e94f.jpg" style="width: 450px; height: 207px;"/></a></p>
+<p>《织梦58》诞生于2014年6月（www.dede58.com），以提供分享精品织梦源码及织梦建站过程常遇到的问题解决方案汇总为主要宗旨。<br ...<br />
+                                  【 <a href="/a/guanyuwomen/">了解详情&gt;&gt;</a> 】</p>
+                              </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <div class="col-3-3 last">
+                      <div id="a1portalSkin_ctr8966189661_Column2C33A67_QHDCPM89661M2" class="qhd_column_contain"><!-- Start_Module_89663 --><a name="17046" id="17046"></a>
+                        <div class="module-default module">
+                          <div class="module-inner">
+                            <div class="module-title-border clearfix">
+                              <div class="module-title-content clearfix">
+                                <h3 style="" class="">新闻资讯</h3>
+                              </div> </div>
+                            <div id="a1portalSkin_ctr8966189661_Column2C33A67_ctr8966389663_mainArea" class="module-content"><!-- Start_Module_89663 --><!-- S entry-list -->
+                              <div class="entry-list entry-set entry-list-article"> <!-- S entry-item -->
+                                <volist name="articles_news" id="v" offset="1" length='2'>
+                                <div class="entry-item">
+                                  <div class="typo">
+                                    <div class="typo-img">
+                                      <div class="entry-img">
+                                      <a href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}">
+                                      <img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}" /></a></div>
+                                    </div>
+                                    <!-- end of typo-img -->
+                                    <div class="typo-text">
+                                      <div class="entry-title">
+                                        <h2><a href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}" target="_blank">{{$v['article_title']}}</a></h2>
+                                      </div>
+                                      <div class="entry-summary">
+                                        <div class="qhd-content">
+                                          <p> <span style="color: rgb(9, 84, 139); font-family: Arial, 宋体, sans-serif; font-size: 12px; line-height: 18px;">{{$v['article_description']}}...</span></p>
+                                        </div>
+                                      </div>
+                                     </div>
+                                    <!-- end of typo-text --></div>
+                                </div>
+                              </volist>
+                                <!-- E entry-item -->
+ </div>
+                              <!-- E entry-list --><!-- End_Module_89663 --></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End_Module_89661 --></div>
+            </div>
+          </div>
+        </div>
+        
+  
+
+
+        <!-- E module-full-screen --><!-- Start_Module_89666 --><a name="17049" id="17049"></a><!-- S module-full-screen -->
+        <div class="module-full-screen module-full-screen-gray" style="">
+          <div class="module-inner">
+            <div class="page-width">
+              <div class="module-full-screen-title">
+                <div class="module-title-content"><i class="mark-left"></i>
+                  <h2>产品中心</h2>
+                  <i class="mark-right"></i></div>
+              </div>
+              <div id="a1portalSkin_ctr8966689666_mainArea" class="module-full-screen-content"><!-- Start_Module_89666 --><!-- S portfolio-list -->
+                <div class="portfolio-list portfolio-list-mask product-list desktops-section">
+                  <ul class="column clearfix">
+                    <volist name="articles_product" id="v" offset="0" length='3'>
+                    
+                    <li class='col-3-1'>
+                      <div class="product-item">
+                        <div class="portfolio-img">
+                        <a href="{{:U('Indexs/product',array('id'=>$v['article_id']))}}" target="_blank"><img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}}" /></a></div>
+                        <div class="portfolio-text">
+                          <div class="portfolio-title">
+                            <h2><a href="/a/fangyuanxinxi/jiatingzhuzhai/20160810/11.html" target="_blank">{{$v['article_title']}}</a></h2>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </li>
+            </volist>
+                    
+                    <!-- <li class='col-3-1'>
+                      <div class="product-item">
+                        <div class="portfolio-img"><a href="/a/fangyuanxinxi/jiatingzhuzhai/20160810/10.html" target="_blank"><img src="/uploads/allimg/160810/1-160Q01036420-L.jpg" alt="广州79号底层复式样板房" /></a></div>
+                        <div class="portfolio-text">
+                          <div class="portfolio-title">
+                            <h2><a href="/a/fangyuanxinxi/jiatingzhuzhai/20160810/10.html" target="_blank">广州79号底层复式样板房</a></h2>
+                          </div>
+                        
+                        </div>
+                      </div>
+                    </li> -->
+
+                <!--     <li class='col-3-1 last'>
+                      <div class="product-item">
+                        <div class="portfolio-img"><a href="/a/fangyuanxinxi/jiatingzhuzhai/20160810/9.html" target="_blank"><img src="/uploads/allimg/160810/1-160Q01034500-L.jpg" alt="广州5号停机坪展厅设计" /></a></div>
+                        <div class="portfolio-text">
+                          <div class="portfolio-title">
+                            <h2><a href="/a/fangyuanxinxi/jiatingzhuzhai/20160810/9.html" target="_blank">广州5号停机坪展厅设计</a></h2>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </li> -->
+
+                  </ul>
+                </div>
+                
+                  
+                  <!-- E entry-item -->
+ </div>
+                <!-- E entry-list --><!-- End_Module_89666 --></div>
+              </div>
+          </div>
+        </div>
+        <!-- E module-full-screen --></div>
+      <!-- end of full-screen-content --></section>
+    <!-- ==================== E main ==================== --><!-- ==================== S footer ==================== --> 
+    
+ 
+<include file="footer" />
+  </div>
+  <div style="text-align:center;">{{$yundi}}</div>
+   
+</form>
+
+</body>
+</html>

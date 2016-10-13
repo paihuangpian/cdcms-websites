@@ -86,20 +86,16 @@
      <include file="left" />
       </div>
   </section>
-  <script>
-    for(var i = 0;i <= $('#mybody img').length;i++){
-        
-        $('#mybody img').eq(i).attr('src','{{$host}}' + $('#mybody img').eq(i).attr('src'))
-    }
-
- </script>
+  
   <include file="footer" />
   </div>
 </body>
  <script>
+  var rep = /^http/;
     for(var i = 0;i <= $('#mybody img').length;i++){
-        
+        if(!rep.test($('#mybody img').eq(i).attr('src'))){
         $('#mybody img').eq(i).attr('src','{{$host}}' + $('#mybody img').eq(i).attr('src'))
+      }
     }
 
  </script>

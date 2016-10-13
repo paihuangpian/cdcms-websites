@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/base.css"/>
+<link rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/animate.min.css"/>
+<link rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/owl.carousel.css"/>
+<link rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/style.css"/>
+<link rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/responsive.css"/>
+<script src="{{$tpl_path}}Js/jquery-1.11.0.min.js"></script>
+<script src="{{$tpl_path}}Js/wow.min_1.js"></script>
+<script src="{{$tpl_path}}Js/owl.carousel.min.js"></script>
+<script src="{{$tpl_path}}Js/page.js"></script>
+<div class="header" style="background:#247dff;">
+<div class="rowFluid">
+<div class="span2 col-md-12">
+<div class="logo"> <a href="{{$host2}}" title="返回首页"> <img src="{{$host}}{{$configs['config_logo']}}" alt="{{$configs['config_name']}}"/> </a> </div>
+</div>
+<div class="span8">
+<div class="mobileMenuBtn"><span class="span1"></span><span class="span2"></span><span class="span3"></span></div>
+<div class="mobileMenuBtn_shad"></div>
+<div class="header_menu">
+<ul id="menu">
+<li><a href="{{$host2}}" class='active' title="{{$configs['config_home']}}">{{$configs['config_home']}}</a></li>
+<foreach name="columns" item='v' key="k">
+<php>if($k <= 4){</php>
+<li><a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$v['column_name']}}">{{$v['column_name']}}</a></li>
+<php>}</php>
+</foreach>
+</ul>
+</div>
+</div>
+<div class="span2"> </div>
+</div>
+</div>

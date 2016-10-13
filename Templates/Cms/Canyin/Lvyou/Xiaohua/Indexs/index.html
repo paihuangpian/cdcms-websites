@@ -1,0 +1,203 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{$configs['config_title']}}</title>
+<meta name="description" content="{{$configs['config_description']}}" />
+<meta name="keywords" content="{{$configs['config_keywords']}}" />
+
+<include file="header" />
+
+
+</head>
+<body>
+
+<style>.navbar-default .navbar-nav>.active_,.navbar-default .navbar-nav>.active_:hover,.navbar-default .navbar-nav>.active_:focus{color:#ffffff;background-color:#03acda;}</style>
+
+<style>.gwxl_banner{width:100%;height:auto;overflow:hidden;position:relative;}.gwxl_banner a{display:block;width:100%;height:100%;}.swiper-pagination2{text-align:center;position:absolute;z-index:10;bottom:10px;}.swiper-pagination-bullet{background:#fff;}.swiper-pagination-bullet-active{background:#d6623d;}.gwxl_banner .swiper-slide img{width:100%;}</style>
+
+<section class="gwxl_banner">
+<div class="swiper-container2">
+<div class="swiper-wrapper">
+<foreach name="carousel" item="v">
+<div class="swiper-slide"><a target="_blank" href="{{$v['carousel_url']}}"> <img src="{{$host}}{{$v['carousel_pic']}}" height="500" alt="{{$v['carousel_name']}}" /></a></div>
+
+</foreach>
+</div>
+ 
+<div class="swiper-pagination2"></div>
+ 
+<div class="swiper-button-next swiper-button-next2"></div>
+<div class="swiper-button-prev swiper-button-next2"></div>
+</div>
+</section>
+<script>
+    var swiper = new Swiper('.swiper-container2', {
+        pagination: '.swiper-pagination2',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        loop: true,
+        autoplay:5000,
+        speed:500,
+        paginationClickable: true,
+        grabCursor : true,
+        parallax:true,
+    });
+
+</script>
+<section style="background-color: #f7f7f7;padding: 0px 0px 30px 0px;">
+<div class="container">
+<div class="page-header">
+<div class="row">
+<div class="col-lg-12"> <h1 class="pull-left">走着瞧</h1>
+<span class="pull-right"></span></div>
+</div>
+</div>
+<div class="row">
+<volist name="articles_product" id="vo" offset="0" length='3'>
+<div class="col-sm-4 animated" data-animation="bounceIn" data-delay="000"><a href="{{:U('product',array('id'=>$vo['article_id']))}}">
+<div class="walkhi"> <img src="{{$host}}{{$vo['article_pic']}}" class="img-responsive">
+<h4>{{$vo['article_keywords']}}</h4>
+<p>{{$v['article_time']|date="Y-m",###}}</p>
+</div>
+</a></div>
+
+ </volist>
+</div>
+</div>
+</section>
+<section class="uphi">
+<div class="container">
+<div class="uphi-header">
+<div class="row">
+<div class="col-lg-12"> <h1 class="pull-left">起来嗨</h1>
+<span class="pull-right"></span> </div>
+</div>
+</div>
+<div class="row"> 
+<volist name="articles_product" id="vo" offset="4" length='1'>
+<div class="col-sm-8 gallery-item animated" data-animation="bounceIn" data-delay="0"> <a href="{{:U('product',array('id'=>$vo['article_id']))}}">
+<div class="gallery-item gallery-items"> <img src="{{$host}}{{$vo['article_pic']}}" class="img-responsive">
+<div class="img-caption">
+<h4>{{$vo['article_keywords']}}</h4>
+<p>{{$v['article_time']|date="Y-m",###}}</p>
+</div>
+</div>
+</a> </div>
+ </volist>
+ 
+<div class="col-sm-4 animated" data-animation="bounceIn" data-delay="400"> 
+ <volist name="articles_product" id="vo" offset="5" length='2'>
+<div class="col-sm-12" style="margin: 0px; padding: 0px;"> <a href="{{:U('product',array('id'=>$vo['article_id']))}}">
+<div class="gallery-item"> <img src="{{$host}}{{$vo['article_pic']}}" class="img-responsive">
+<div class="img-caption">
+<h4>{{$vo['article_keywords']}}</h4>
+<p>{{$v['article_time']|date="Y-m",###}}</p>
+</div>
+</div>
+</a> </div>
+</volist>
+</div>
+</div>
+</div>
+</section>
+<section class="hithing">
+<div class="container">
+<div class="hithing-header">
+<div class="row">
+<div class="col-lg-12"><h1 class="pull-left">嗨玩意</h1>
+<span class="pull-right"></span> </div>
+</div>
+</div>
+<volist name="articles_product" id="vo" offset="7" length='1'>
+<div class="row" style="padding:0px 15px;"> <div class="col-sm-8 clear-lr gallery-item animated" data-animation="bounceIn" data-delay="0"> <a href="{{:U('product',array('id'=>$vo['article_id']))}}">
+<div class="gallery-item" style="height: 253px; overflow: hidden;"><img src="{{$host}}{{$vo['article_pic']}}" class="img-responsive minheight">
+<div class="img-caption">
+<h4>{{$vo['article_keywords']}}</h4>
+<p>{{$v['article_time']|date="Y-m",###}}</p>
+</div>
+</div>
+</a> </div>
+</volist>
+<volist name="articles_product" id="vo" offset="8" length='1'>
+<div class="col-sm-4 clear-lr animated" data-animation="bounceIn" data-delay="400"> <a href="{{:U('product',array('id'=>$vo['article_id']))}}">
+<div class="gallery-item"> <img src="{{$host}}{{$vo['article_pic']}}" class="img-responsive minheight">
+<div class="img-caption">
+<h4>{{$vo['article_keywords']}}</h4>
+<p>{{$v['article_time']|date="Y-m",###}}</p>
+</div>
+</div>
+</a> </div>
+</volist>
+</div>
+
+<div class="row" style="padding:0px 15px;">
+<volist name="articles_wens" id="vo" offset="1" length='4'>
+<div class="col-sm-3 clear-lr animated" data-animation="bounceIn" data-delay="400" style="margin: 0px;">
+<a href="{{:U('news',array('id'=>$vo['article_id']))}}">
+<div class="gallery-item"> <img src="{{$host}}{{$vo['article_pic']}}" class="img-responsive minheight">
+<div class="img-caption">
+<h4>{{$vo['article_title']}}</h4>
+<p>{{$v['article_time']|date="Y-m",###}}</p>
+</div>
+</div>
+</a> 
+</div>
+</volist>
+</div>
+</div>
+</section>
+<section class="higuestsay">
+<div class="container">
+<div class="hgs-header">
+<div class="row">
+<div class="col-lg-12"> <h1 class="pull-left">嗨客说</h1>
+<span class="pull-right"></span> </div>
+</div>
+</div>
+<div class="row">
+
+<volist name="articles_wens" id="v" offset="5" length='4'>
+<div class="col-sm-3 animated" data-animation="bounceIn" data-delay="000" style="text-align: center;"> <a href="{{:U('news',array('id'=>$vo['article_id']))}}"> <img src="{{$host}}{{$vo['article_pic']}}">
+<div class="hgs-content">
+<h4>{{$v['article_title']}}</h4>
+<p>{{$v['article_description']}}</p>
+<p style="text-align: right;"></p>
+</div>
+</a> </div>
+</volist>
+
+
+
+</div>
+</div>
+</section>
+<section class="hiview">
+<div class="container">
+<div class="hiview-header">
+<div class="row">
+<div class="col-lg-12"> <h1 class="pull-left">嗨视角</h1>
+<span class="pull-right"></span> </div>
+</div>
+</div>
+<div class="row">
+<volist name="articles_wens" id="v" offset="9" length='3'>
+<div class="col-sm-4 animated" data-animation="bounceIn" data-delay="000"> <a href="{{:U('news',array('id'=>$vo['article_id']))}}">
+<div class="walkhi2"> <img src="{{$host}}{{$vo['article_pic']}}" class="img-responsive">
+<h4>{{$vo['article_keywords']}}</h4>
+<p>{{$v['article_time']|date="Y-m",###}}</p>
+</div>
+</a> </div>
+</volist>
+</div>
+</div>
+</section>
+<include file="footer" />
+
+
+</div>
+
+</body>
+</html>

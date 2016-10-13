@@ -9,11 +9,11 @@ return array(
     'DB_PWD'                =>      'root',                       // 密码
     'DB_PREFIX'             =>      '',    		                  // 数据库表前缀
     'URL_MODEL'             =>      2,          		          //重写模式
-    'SHOW_PAGE_TRACE'       =>      true,       		          //开启页面trace
+   'SHOW_PAGE_TRACE'       =>      true,       		          //开启页面trace
     'URL_HTML_SUFFIX'       =>      'html',      		          //设置伪静态
     'TMPL_L_DELIM'    		=>      '{{',
     'TMPL_R_DELIM'    		=>      '}}',
-
+	// 'TMPL_CACHE_TIME'       =>  1, 
 
     'TOKEN_ON'              =>      true,                       // 是否开启令牌验证 默认关闭
     'TOKEN_NAME'            =>      '__hash__',                 // 令牌验证的表单隐藏字段名称，默认为__hash__

@@ -1,0 +1,28 @@
+ <footer class="footer">
+  <div class="footer-main">
+    <div id="a1portalSkin_footerAreaA" class="page-width clearfix"><!-- Start_Module_89659 --><a name="17050" id="17050"></a>
+      <div class="module-default">
+        <div class="module-inner">
+          <div id="a1portalSkin_ctr8965989659_mainArea" class="module-content"><!-- Start_Module_89659 -->
+            <div class="qhd-content">
+              <p style="text-align: center;">
+               <a href="{{$host2}}" title="{{$configs['config_home']}}">{{$configs['config_home']}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <foreach name="columns" item='v' key="k">
+                <php>if($k <= 5){</php>
+                <a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$v['column_name']}}">{{$v['column_name']}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <php>}</php>
+</foreach>
+
+                </p>
+              <p style="text-align: center;"> {{$configs['config_copyright']}}</p>
+            </div>
+            <!-- End_Module_89659 --></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> 
+   
+
+
+

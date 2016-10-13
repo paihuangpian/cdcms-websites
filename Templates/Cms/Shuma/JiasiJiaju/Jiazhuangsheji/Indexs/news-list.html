@@ -1,0 +1,52 @@
+
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{$column['column_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+<style type="text/css">.header{background-color:#fff;}.nav-bg,.slider .btn-prev:hover,.slider .btn-next:hover,.banner-text span a,.pic-box:hover p,.btn-back:hover,.btn-prev2:hover,.btn-next2:hover,.sub-nav .sub-on a,.sub-nav li a:hover,.formBtn button:hover,.nav li a:after,.nav .on a:after{background-color:#a6cc00;}.news-list-info:hover h4,.news-more a:hover{color:#a6cc00;}.news-more a:hover,.form input:focus,.form textarea:focus{border-color:#a6cc00;}body{background-image:url(../../templets/default/css/bg.jpg);}</style>
+</head>
+<body>
+
+<div class="content">
+ 
+<div class="big-title">
+<h3>{{$position}}</h3>
+<ul>
+</ul>
+</div>
+<div class="news-list">
+<foreach name="articles" item="v">
+<div class="news-box">
+<a href="{{:U('news',array('id'=>$v['article_id']))}}" >
+<div class="news-list-img" style="width:590px;height:275px;"><img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}"></div>
+</a>
+<div class="news-list-info">
+<div class="news-list-title"> <a href="{{:U('news',array('id'=>$v['article_id']))}}">
+<h4>{{$v['article_title']}}</h4>
+</a>
+<p>{{$v['article_description']}}… </p>
+
+</div>
+</div>
+</div>
+</foreach> 
+
+
+</div>
+
+<div>
+
+<ul class="page">
+<li class="page_on"><li><span class="pageinfo">共 <strong>{{$number}}</strong>页<strong>{{$count}}</strong>条记录</span></li>
+</li>
+</ul>
+</div>
+<include file="footer" />
+  </div>
+<div style="text-align:center">{{$yundi}}</div>
+</body>
+</html>

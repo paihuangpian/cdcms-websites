@@ -1,0 +1,49 @@
+
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{$configs['config_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+<style type="text/css">.header{background-color:#fff;}.nav-bg,.slider .btn-prev:hover,.slider .btn-next:hover,.banner-text span a,.pic-box:hover p,.btn-back:hover,.btn-prev2:hover,.btn-next2:hover,.sub-nav .sub-on a,.sub-nav li a:hover,.formBtn button:hover,.nav li a:after,.nav .on a:after{background-color:#a6cc00;}.news-list-info:hover h4,.news-more a:hover{color:#a6cc00;}.news-more a:hover,.form input:focus,.form textarea:focus{border-color:#a6cc00;}body{background-image:url(../../templets/default/css/bg.jpg);}</style>
+</head>
+<body>
+
+
+<div class="content">
+ 
+ 
+<div class="gallery-list">
+<div class="sub-nav">
+<h3>{{$position}}</h3>
+<ul>
+ <foreach name="current_column['second']" item="v">
+<li class="sub-on"><a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$vo['column_name']}}">{{$v['column_name']}}</a></li></foreach>
+</ul>
+</div>
+<div class="gallery" style="margin-top:45px;">
+<foreach name="articles" item="v">
+<a href="{{:U('product',array('id'=>$v['article_id']))}}" title="{{$v['article_title']}}">
+<div class="pic-box"> <img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}" width="285" height="190">
+<div class="box-over"></div>
+<p>{{$v['article_title']}}</p>
+</div>
+</a>
+</foreach>
+</div>
+<div>
+<ul class="page">
+<li class="page_on"><li><span class="pageinfo">共 <strong>{{$number}}</strong>页<strong>{{$count}}</strong>条记录</span></li>
+</li>
+</ul>
+</div>
+</div>
+
+<include file="footer" />
+  </div>
+  <div style="text-align:center">{{$yundi}}</div>
+
+</body>
+</html>

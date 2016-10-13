@@ -1,0 +1,207 @@
+
+<html lang="zh-CN" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
+<meta property="wb:webmaster" content="7106966487d5098e">
+<title>{{$configs['config_title']}}</title>
+<meta name="description" content="{{$configs['config_description']}}" />
+<meta name="keywords" content="{{$configs['config_keywords']}}" />
+<meta name="author" content="order by dede58.com"/>
+<include file="header" />
+ 
+</head>
+<body>
+
+<section class="ban">
+<div id="carousel-example-generic" class="carousel slide carousel-top" data-ride="carousel">
+ 
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-generic" data-slide-to="0" class="active"> </li>
+<li data-target="#carousel-example-generic" data-slide-to="1"> </li>
+<li data-target="#carousel-example-generic" data-slide-to="2"> </li>
+</ol>
+ 
+<div class="carousel-inner" role="listbox">
+
+<foreach name="carousel" item="v" key="k">
+<div class="item  <if condition='($k eq 0)'>active</if>">
+<img src="{{$host}}{{$v['carousel_pic']}}" alt="{{$v['carousel_name']}}">
+ </div>
+</foreach>
+</div>
+</div>
+</section>
+<section class="engin">
+<div class="container-1500">
+<div class="row">
+<volist name="articles_product" id="vo" offset="0" length='4'>
+<a href="{{:U('product',array('id'=>$vo['article_id']))}}">
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+<div class="engin-frame">
+<img src="{{$host}}{{$vo['article_pic']}}">
+<div class="engin-text"> {{$vo['article_name']}}</div>
+</div>
+<div class="engin-xq">
+<li>{{$v['article_time']|date="Y-m",###}}</li>
+<h4>{{$vo['article_keywords']}}</h4>
+<p>{{$v['article_time']|date="Y-m",###}}</p>
+</div>
+</div>
+</a>
+</volist>
+
+<div class="clearfix visible-xs-block"> </div>
+<div class="clearfix visible-lg-block visible-md-block visible-sm-block"> </div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <a href="{{:U('product',array('id'=>$vo['article_id']))}}"> 了解更多+ </a> </div>
+</div>
+</div>
+</section>
+<footer class="footer text-center">
+<div class="footer-map"> <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>地址解析</title>
+<style type="text/css">*{margin:0px;padding:0px;}body,button,input,select,textarea{font:12px/16px Verdana,Helvetica,Arial,sans-serif;}p{width:100%;padding-top:3px;margin-top:10px;overflow:hidden;}input#address{width:300px;}#container{min-width:603px;min-height:520px;}</style>
+<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+<script>
+var geocoder,map,marker = null;
+var init = function() {
+    var center = new qq.maps.LatLng(39.916527,116.397128);
+    map = new qq.maps.Map(document.getElementById('container'),{
+        center: center,
+        zoom: 15
+    });
+    //调用地址解析类
+    geocoder = new qq.maps.Geocoder({
+        complete : function(result){
+            map.setCenter(result.detail.location);
+            var marker = new qq.maps.Marker({
+                map:map,
+                position: result.detail.location
+            });
+        }
+    });
+}
+
+
+function codeAddress() {
+    var address = document.getElementById("address").value;
+    //通过getLocation();方法获取位置信息值
+    geocoder.getLocation(address);
+}
+</script>
+</head>
+<body onload="init()">
+<div> </div>
+<div id="container"></div>
+</body>
+</html>
+<div class="footer-container">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+<div class="foot-div foot-div1">
+<p> {{$configs['config_name']}} </p>
+<h2> {{$configs['config_tel']}} </h2>
+</div>
+<div class="foot-div foot-div2">
+<h4> {{$configs['config_name']}} </h4>
+<p> 电话：{{$configs['config_tel']}} </p>
+<p> 手机：{{$configs['config_phone']}} </p>
+<p> 传真：{{$configs['config_tel']}} </p>
+<p> 邮箱：<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7e1f1a1317103e1a1b1a1b4b46501d1113">{{$configs['config_email']}}</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> </p>
+<p> {{$configs['config_address']}}</p>
+</div>
+<div class="foot-div foot-div3">
+<script src="/templets/default/js/loader.js" widget="shareqq" charset="utf-8">
+        </script>
+<script widget="shareqq" charset="utf-8" src="/templets/default/js/shareqq.js?t=20121127">
+        </script>
+<a title="微信" class="ewm-a"> <img src="/templets/default/images/wx.png">
+<div class="ewm"> <img src="/uploads/allimg/160830/1-160S01H9230-L.png"> </div>
+</a> <a href="" title="微博"> <img src="/templets/default/images/wb.png"> </a>
+<p>
+
+</div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+<div>
+<h4> 认真聆听您的需求和建议是我们最重要的工作之一 </h4>
+<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post"/>
+<input type="hidden" name="diyid" value="1"/>
+<input type="hidden" name="do" value="2"/>
+<li>
+<input type="text" class="form-control" name='xingming' id='xingming'placeholder="姓名">
+                </li>
+                <li>
+                  <input type="text" class="form-control" name='dianhua' id='dianhua' placeholder="电话">
+                </li>
+                <li>
+                  <textarea class="form-control" rows="3" name='lynr' id='lynr' placeholder="留言">
+         </textarea>
+                </li>
+                <input type="hidden" name="dede_fields" value="xingming,text;dianhua,text;youxiang,text;lynr,multitext" />
+                <input type="hidden" name="dede_fieldshash" value="dfc945521441f5829cade7739bdc7541" />
+                <li class="foot-li"> <span style="text-align: center"></span>
+                  <input type="submit" name="submit" value="提 交" class="form-control" style='width:100%;height:80' />
+                </li>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</footer>
+<!-- Include all compiled plugins (below), or include individual files
+  as needed --> 
+<script>
+   $(document).ready(function() {
+    $("#flip").click(function() {
+     $(".footer-container").slideToggle("slow");
+    });
+
+    //提交留言信息
+    $("#publish").click(function() {
+     var name = $("input[name='name']").val();
+     var phone = $("input[name='phone']").val();
+     if (phone == '') {
+      alert('请输入联系方式');
+      return false;
+     }
+     var Email = $("input[name='Email']").val();
+     var content = $("textarea[name='content']").val();
+     if (content == '') {
+      alert('请输入留言内容');
+      return false;
+     }
+     $.post("#", {
+      "name": name,
+      "phone": phone,
+      "Email": Email,
+      "content": content,
+     },
+     function(data) {
+      if (data == "1") {
+       alert('提交成功');
+       window.location.reload();
+      }
+     });
+    });
+
+   });
+  </script>
+
+<div style="text-align:center">{{$yundi}}</div>
+
+
+
+  
+</body>
+</html>

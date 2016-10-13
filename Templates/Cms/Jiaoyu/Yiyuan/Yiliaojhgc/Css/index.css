@@ -1,0 +1,355 @@
+/* 织梦58（dede58.com）做最好的织梦整站模板下载网站 */
+
+.engin {
+	padding: 4% 0 6% 0;
+}
+.engin-frame {
+	overflow: hidden;
+	position: relative;
+}
+.engin-text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	background: #000;
+	opacity: 0.7;
+	color: #fff;
+	padding: 10px;
+	font-size: 1.4rem;
+}
+.engin .col-lg-3 {
+	padding: 15px;
+}
+.engin-frame img {
+	display: block;
+	-webkit-transition: 1s;
+	transition: 1s;
+}
+.engin .col-lg-3:hover .engin-frame img {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+}
+.engin-xq {
+	display: none;
+	position: absolute;
+	top: 100%;
+	color: #fff;
+	z-index: 999;
+	background: #1bc500;
+	width: 100%;
+	left: 0;
+	text-align: left;
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
+.engin-xq li {
+	background: url(../style/engin-xq.jpg) no-repeat bottom left;
+	font-size: 3.6rem;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.engin-xq li span {
+	font-size: 14px;
+	display: inline-block;
+	margin-left: 15px;
+	font-weight: 400;
+}
+.engin-xq h4 {
+	font-size: 1.8rem;
+}
+.engin-xq p {
+	font-size: 1.4rem;
+	color: #eee;
+}
+.engin .col-lg-3:hover {
+	background: #1bc500;
+}
+.engin .col-lg-3:hover .engin-text {
+	display: none;
+}
+.engin .col-lg-3:hover .engin-xq {
+	display: block;
+}
+.engin .col-lg-12 {
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+.engin .col-lg-12 a {
+	display: inline-block;
+	font-size: 1.8rem;
+	color: #fff;
+	background: #5a6666;
+	padding: 10px 4%;
+	border-radius: 3px;
+}
+.engin .col-lg-12 a:hover {
+	background: #1bc500;
+}
+.client {
+	padding: 4% 0 6% 0;
+	background: #f3f3f3;
+}
+.client .col-lg-2 {
+	border: 1px #ccc solid;
+	padding: 0;
+	margin: -1px 0 0 -1px;
+}
+.client .col-lg-2 img {
+	transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	-web-kit-transform: scale(1, 1);
+	transition: transform 0.5s;
+	-ms-transition: transform 0.5s;
+	-webkit-transition: transform 0.5s; /* Safari *//*-webkit-filter: grayscale(100%);
+
+  -webkit-filter: grayscale(1); 
+
+  filter: grayscale(100%);
+
+  filter: gray;*/
+
+}
+/*.client .col-lg-2:hover img{
+
+  -webkit-filter: grayscale(0%);
+
+  -webkit-filter: grayscale(0); 
+
+  filter: grayscale(0%);
+
+  filter: gray;
+
+}*/
+
+.client .col-lg-2:hover img {
+	transform: scale(0.9, 0.9);
+	-ms-transform: scale(0.9, 0.9);
+	-web-kit-transform: scale(0.9, 0.9);
+}
+.client .col-lg-2 img.disnone {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.client .col-lg-2:hover img.disnone {
+	opacity: 1;
+}
+.client .col-lg-2 img.disblock {
+	opacity: 1;
+}
+.client .col-lg-2:hover img.disblock {
+	opacity: 0;
+}
+.client .col-lg-12 {
+	font-size: 2.8rem;
+	color: #5a6666;
+	background: url(../style/client.jpg) no-repeat bottom center;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+}
+.footer {
+	position: relative;
+	max-height: 675px;
+}
+.footer-container {
+	position: absolute;
+	z-index: 999;
+	bottom: 50px;
+	width: 100%;
+	left: 0;
+	height: 525px;
+	background: #262b2b;
+	background-color: rgba(37,42,42,0.8);
+}
+.footer-container .container {
+	color: #fff;
+	padding-top: 1%;
+}
+.footer-container .container input, .footer-container .container textarea {
+	border: 1px #fff solid;
+	background-color: rgba(255,255,255,0);
+	border-radius: 0;
+	font-size: 1.6rem;
+	padding: 22px 20px;
+	color: #fff;
+}
+ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+color: #FFF !important;
+}
+.footer-container li {
+	margin-top: 37px;
+}
+.foot-li {
+	text-align: right;
+}
+.foot-li button {
+	border-radius: 2px;
+	padding: 12px 10%;
+	font-size: 1.8rem;
+	border: 0;
+}
+.foot-li button:hover {
+	background: #1bc500;
+}
+.footer-container h2 {
+	-webkit-margin-before: 0;
+}
+.foot-div p {
+	font-size: 1.4rem;
+	color: #aaa;
+}
+.foot-div2 {
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: 30px 0;
+}
+.foot-div2 p {
+	padding-left: 25px;
+	background: url(../style/foot-p.png) no-repeat;
+}
+.foot-div2 p:nth-child(2) {
+	background-position: 0px -2px;
+}
+.foot-div2 p:nth-child(3) {
+	background-position: 0px -29px;
+}
+.foot-div2 p:nth-child(4) {
+	background-position: 0px -56px;
+}
+.foot-div2 p:nth-child(5) {
+	background-position: 0px -85px;
+}
+.foot-div2 p:nth-child(6) {
+	background-position: 0px -115px;
+}
+.foot-div3 a {
+	display: inline-block;
+	margin-bottom: 30px;
+	padding-right: 30px;
+}
+.footer-map {
+	border-top: 1px #ccc solid;
+}
+.footer2 {
+	background: #1e2525;
+	height: auto;
+	overflow: hidden;
+	padding: 15px;
+	margin: 0;
+}
+.footer2 a {
+	display: block;
+}
+.footer2 img {
+	animation: myfirst 0.5s linear 0.5s infinite alternate;
+	/* Firefox: */
+
+	-moz-animation: myfirst 0.5s linear 0.5s infinite alternate;
+	/* Safari and Chrome: */
+
+	-webkit-animation: myfirst 0.5s linear 0.5s infinite alternate;
+	/* Opera: */
+
+	-o-animation: myfirst 0.5s linear 0.5s infinite alternate;
+}
+ @keyframes myfirst {
+ 0% {
+ transform:translate(0px, -5px);
+ -ms-transform:translate(0px, -5px);
+ -webkit-transform:translate(0px, -5px);
+}
+ 100% {
+ transform:translate(0px, 5px);
+ -ms-transform:translate(0px, 5px);
+ -webkit-transform:translate(0px, 5px);
+}
+}
+ @media( max-width:1400px) {
+.footer-container li {
+	margin-top: 22px;
+}
+.footer-container .container {
+	padding-top: 5%;
+}
+.foot-div2 {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin: 15px 0;
+}
+.foot-div3 a {
+	margin-bottom: 10px;
+	padding-right: 30px;
+}
+}
+ @media( max-width:1200px) {
+.footer2, .footer-map {
+	display: none;
+}
+.footer-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	background: #262b2b;
+	background-color: rgba(37,42,42,1);
+}
+.footer-container .container {
+	padding-top: 5%;
+	color: #fff;
+	padding-bottom: 5%;
+}
+ .
+}
+ @media( max-width:992px) {
+.page {
+	background: #333 !important;
+}
+}
+ @media( max-width:767px) {
+.client {
+	padding: 8% 0;
+}
+.client .col-lg-12 {
+	font-size: 1.6rem;
+	margin-bottom: 15px;
+}
+.engin .col-lg-12 {
+	margin-top: 0px;
+}
+.engin-text {
+	font-size: 1.2rem;
+	padding: 5px;
+}
+.engin .col-lg-12 a {
+	font-size: 1.2rem;
+	padding: 8px 8%;
+}
+.engin-xq li {
+	font-size: 2rem;
+}
+.engin-xq h4 {
+	font-size: 1.6rem;
+}
+.engin-xq p {
+	font-size: 1.2rem;
+}
+.footer-container h4 {
+	font-size: 1.4rem;
+}
+.foot-div p {
+	font-size: 1.2rem;
+}
+.footer-container .container input, .footer-container .container textarea {
+	padding: 15px;
+	font-size: 1.4rem;
+}
+.foot-li button {
+	font-size: 1.4rem;
+	padding: 6px 10%;
+}
+}

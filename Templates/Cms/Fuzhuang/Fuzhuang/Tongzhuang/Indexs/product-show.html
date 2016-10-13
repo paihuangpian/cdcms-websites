@@ -83,9 +83,11 @@
       <!-- E full-page-content --></div>
   </section>
   <script>
+  var rep = /^http/;
     for(var i = 0;i <= $('.qhd-content img').length;i++){
-        
-        $('.qhd-content img').eq(i).attr('src','{{$host}}' + $('.qhd-content img').eq(i).attr('src'))
+        if(!rep.test($('.qhd-content img').eq(i).attr('src'))){
+        $('.qhd-content img').eq(i).attr('src','{{$host}}' + $('.qhd-content img').eq(i).attr('src'));
+      }
     }
 
  </script>

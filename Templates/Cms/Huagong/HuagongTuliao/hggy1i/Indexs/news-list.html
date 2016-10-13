@@ -1,0 +1,62 @@
+
+<html class="uk-notouch">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{$column['column_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+<meta http-equiv="X-UA-Compatible" content="edge">
+</head>
+<body onLoad="init()">
+ 
+ 
+<div style="text-align:center;font-size:30px;margin-top:20px;color:black" >{{$current_column['column_name']}}</div>
+ 
+<div class="nav-sub">
+<div class="sub-nav">
+<foreach name="current_column['second']" item="v">
+<a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}">{{$v['column_name']}}</a>
+</foreach>
+</div>
+</div>
+
+<div class="uk-container-center newslist">
+ <foreach name="articles" item="v">
+<div class="uk-grid newslist-box">
+<div class="uk-width-medium-3-10 uk-width-small-1-1">
+<a href="{{:U('news',array('id'=>$v['article_id']))}}" class="uk-thumbnail">
+<span class="n-img"><img src="{{$host}}{{$v['article_pic']}}"></span>
+</a>
+</div>
+<div class="uk-width-medium-7-10 uk-width-small-1-1">
+<div class="n-info">
+<h4><a href="/a/news/hyxw/2016/0906/5.html" title="{{$v['article_title']}} ">{{$v['article_title']}} </a></h4>
+<span class="n-date">DATE: {{$v['article_time']|date="Y-m",###}}</span>
+<p>
+{{$v['article_description']}}…</p>
+</div>
+</div>
+</div>
+<hr>
+</foreach>  
+
+  
+
+  
+
+  
+
+ 
+<div class="pages">
+<ul>
+<li><span class="pageinfo">共 {{$number}} 页 {{$count}} 条记录 {{$show}}</span></li>
+</ul>
+</div><br><br><br>
+<div class="uk-clearfix"></div>
+</div>
+<include file="footer" />
+  </div>
+<div style="text-align:center">{{$yundi}}</div>
+</body></html>

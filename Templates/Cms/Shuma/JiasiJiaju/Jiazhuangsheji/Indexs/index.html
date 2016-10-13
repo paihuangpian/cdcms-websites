@@ -1,0 +1,81 @@
+
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{$configs['config_title']}}</title>
+<meta name="description" content="{{$configs['config_description']}}" />
+<meta name="keywords" content="{{$configs['config_keywords']}}" />
+<meta name="author" content="order by dede58.com"/>
+<include file="header" />
+<style type="text/css">.header{background-color:#fff;}.nav-bg,.slider .btn-prev:hover,.slider .btn-next:hover,.banner-text span a,.pic-box:hover p,.btn-back:hover,.btn-prev2:hover,.btn-next2:hover,.sub-nav .sub-on a,.sub-nav li a:hover,.formBtn button:hover,.nav li a:after,.nav .on a:after{background-color:#a6cc00;}.news-list-info:hover h4,.news-more a:hover{color:#a6cc00;}.news-more a:hover,.form input:focus,.form textarea:focus{border-color:#a6cc00;}body{background-image:url(../../templets/default/css/bg.jpg);}</style>
+</head>
+<body>
+
+<div class="content">
+<div class="slider" style="height: 500px; opacity: 1; ">
+
+<ul style="top: -500px;">
+<foreach name="carousel" item="v" key="k">
+<li style="width: 1200px; height: 500px; "><a><img src="{{$host}}{{$v['carousel_pic']}}" alt="{{$v['carousel_name']}}" style="width: 1200px; "></a></li>
+
+</foreach>
+
+</ul>
+<div class="slider-ctrl">
+<div class="btn-prev"></div>
+<div class="btn-next"></div>
+</div>
+</div>
+</div>
+
+<div class="banner-text">
+<h2>我们的产品</h2>
+<h3>OUR PRODUCT</h3>
+</div>
+<div class="gallery">
+<volist name="articles_product" id="v" offset="0" length='8'>
+<a href="{{:U('Indexs/product',array('id'=>$v['article_id']))}}">
+<div class="pic-box">
+<img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}}" width="286" height="190">
+<div class="box-over"></div>
+<p>{{$v['article_title']}}</p>
+</div>
+</a>
+</volist>
+</div>
+
+
+<div class="big-title">
+<h2>新闻中心</h2>
+<h3>NEWS TRENDS</h3>
+</div>
+
+<div class="news-list">
+
+<volist name="articles_news" id="v" offset="2" length='2'>
+<div class="news-box">
+ <a href="{{:U('Indexs/news',array('id'=>$v['article_id']))}}">
+<div class="news-list-img">
+<img src="{{$host}}{{$v['article_pic']}}" alt="{{$v['article_title']}}"></div>
+</a>
+<div class="news-list-info">
+<div class="news-list-title">
+<a href="/a/zx/2016/0822/1.html">
+<h4>{{$v['article_title']}}</h4>
+</a>
+<p>{{$v['article_description']}}.... </p>
+
+</div>
+</div>
+</div>
+</volist>
+
+
+</div>
+<include file="footer" />
+  </div>
+  <div style="text-align:center;">{{$yundi}}</div>
+
+</body>
+</html>

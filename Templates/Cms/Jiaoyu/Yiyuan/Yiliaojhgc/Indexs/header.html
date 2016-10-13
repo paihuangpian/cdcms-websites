@@ -1,0 +1,47 @@
+<link href="{{$tpl_path}}Css/bootstrap.min.css" rel="stylesheet">
+<link href="{{$tpl_path}}Css/layout.css" rel="stylesheet">
+<link href="{{$tpl_path}}Css/style.css" rel="stylesheet">
+<script src="{{$tpl_path}}Js/jquery.min.js">
+  </script>
+<script src="{{$tpl_path}}Js/bootstrap.min.js">
+  </script>
+<script src="{{$tpl_path}}Js/wb.js" type="text/javascript" charset="utf-8">
+  </script>
+<!--[if lt IE 9]>
+   <script src="{{$tpl_path}}Js/html5shiv.min.js">
+   </script>
+   <script src="{{$tpl_path}}Js/respond.min.js">
+   </script>
+  <![endif]-->
+<!--[if lt IE 10]>
+  
+  <![endif]-->
+  <header>
+ 
+<nav class="navbar navbar-default navbar-fixed-top"> <div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button>
+<a class="navbar-brand visible-lg visible-sm visible-md" href="{{$host2}}">
+ <img alt="" src="{{$host}}{{$configs['config_logo']}}" alt="{{$configs['config_name']}}"> 
+ </a>
+  <a class="navbar-brand visible-xs" href="/">
+   <img alt="" src="/templets/default/images/logo.png">
+    </a> </div>
+ 
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+   
+<li class='active'>
+ <a href="{{$host2}}"> {{$configs['config_home']}}</a> </li>
+  <foreach name="columns" item='v'>
+<li class=''> <a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}">  {{$v['column_name']}} </a> </li>
+
+</foreach>
+</ul>
+</div>
+ 
+</div>
+ 
+</nav>
+ <link href="{{$tpl_path}}Css/index.css" rel="stylesheet">
+</header>

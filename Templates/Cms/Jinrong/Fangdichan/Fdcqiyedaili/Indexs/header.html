@@ -1,0 +1,94 @@
+<script type="text/javascript">var allpane = 'topAreaA|headerAreaA|mainArea|footerAreaA|bottomAreaA|fixed-left|fixed-right';</script>
+<link id="qhddefaultcontent2085_css" rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/qhdcontent.css"/>
+<link id="_Portals__default_Skins_RentalHouse_Html_css_content_css" rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/content.css"/>
+<link id="_Portals__default_Skins_RentalHouse_Html_css_menu_css" rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/menu.css"/>
+<link id="_Portals__default_Skins_RentalHouse_Html_css_jquery_fancybox_1_3_4_css" rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/jquery.fancybox-1.3.4.css"/>
+<link id="_Portals__default_Skins_RentalHouse_Html_css_jquery_ad_gallery_css" rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/jquery.ad-gallery.css"/>
+<link id="_Portals__default_Skins_RentalHouse_Html_css_style_css" rel="stylesheet" type="text/css" href="{{$tpl_path}}Css/style.css"/>
+<!--[if lt IE 9]>
+ <script src="{{$tpl_path}}Js/html5.js"></script>
+<![endif]--><!--[if IE 6]>
+ <script type="text/javascript" src="{{$tpl_path}}Js/ie7.js"></script>
+ <script type="text/javascript" src="{{$tpl_path}}Js/dd_belatedpng.js"></script> 
+ <script type="text/javascript">
+  DD_belatedPNG.fix('.top img, .footer img, .bottom img, .form-btn, .module-icon-default');
+ </script>
+<![endif]-->
+<script src="{{$tpl_path}}Js/a1portalcore.js" type="text/javascript"></script>
+<script src="{{$tpl_path}}Js/a1portal.js"></script>
+<script src="{{$tpl_path}}Js/jquery-1.7.2.min.js"></script>
+<script src="{{$tpl_path}}Js/superfish.js"></script>
+<script src="{{$tpl_path}}Js/jquery.caroufredsel.js"></script>
+<script src="{{$tpl_path}}Js/jquery.touchswipe.min.js"></script>
+<script src="{{$tpl_path}}Js/jquery.tools.min.js"></script>
+
+<script src="{{$tpl_path}}Js/jquery.fancybox-1.3.4.pack.js"></script>
+
+<script src="{{$tpl_path}}Js/jquery.ad-gallery.pack.js"></script>
+
+<script src="{{$tpl_path}}Js/jquery.fixed.js"></script>
+
+<script src="{{$tpl_path}}Js/cloud-zoom.1.0.2.min.js"></script>
+
+<script src="{{$tpl_path}}Js/device.min.js"></script>
+
+<script src="{{$tpl_path}}Js/custom.js"></script>
+<div>
+<input type="hidden" name="__VIEWSTATE_CACHEKEY" id="__VIEWSTATE_CACHEKEY" value=""/>
+</div>
+
+<div id="wrapper" class="home-page"> 
+<header class="top header-v2">   
+<div class="top-main">
+<div class="page-width clearfix">
+<div class="logo float-left" skinobjectzone="HtmlLogo_338"><a href="{{$host2}}"><img src="{{$host}}{{$configs['config_logo']}}" alt="{{$configs['config_name']}}"/></a><i></i></div>
+ 
+<div class="top-main-content float-right">
+<div id="a1portalSkin_topAreaA" class="top-widget float-right"> <a name="17042" id="17042"></a>
+<div class="module-default module-no-margin">
+<div class="module-inner">
+<div id="a1portalSkin_ctr8965889658_mainArea" class="module-content"> 
+<div class="qhd-content">
+<p> &nbsp;&nbsp;<span style="font-size:24px;"><span style="color:#ff0000;">订购电话：{{$configs['config_tel']}}</span></span></p>
+</div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+<div class="nav-wrapper">
+<div class="page-width clearfix"> 
+<nav class="nav float-left">
+<div class="main-nav clearfix" skinobjectzone="menu_549">
+
+<ul class="sf-menu">
+<li class='current'>
+<a class="first-level" href="{{$host2}}" title="{{$configs['config_home']}}">{{$configs['config_home']}}</a><i></i></li>
+<foreach name="columns" item='v' key="k">
+
+<li class=""><a class="first-level" href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$v['column_name']}}">{{$v['column_name']}}</a><i></i>
+
+<ul class="">
+<foreach name="v['second']" item="vo">
+<li class=""><a class="" href="{{:U($vo['column_type'],array('id'=>$vo['column_id']))}}" title="{{$vo['column_name']}}" target="">{{$vo['column_name']}}</a></li>
+
+</foreach>
+</ul>
+
+</li>
+
+</foreach>
+
+
+</ul>
+
+</div>
+</nav>
+ </div>
+</div>
+  
+
+  

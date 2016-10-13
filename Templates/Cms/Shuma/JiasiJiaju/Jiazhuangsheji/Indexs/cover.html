@@ -1,0 +1,91 @@
+<!-- {{$column['column_text']}} -->
+
+
+
+
+
+
+
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{$column['column_title']}}</title>
+<meta name="keywords" content="{{$column['column_keywords']}}" />
+<meta name="description" content="{{$column['column_description']}}" />
+<include file="header" />
+
+<style type="text/css">.header{background-color:#fff;}.nav-bg,.slider .btn-prev:hover,.slider .btn-next:hover,.banner-text span a,.pic-box:hover p,.btn-back:hover,.btn-prev2:hover,.btn-next2:hover,.sub-nav .sub-on a,.sub-nav li a:hover,.formBtn button:hover,.nav li a:after,.nav .on a:after{background-color:#a6cc00;}.news-list-info:hover h4,.news-more a:hover{color:#a6cc00;}.news-more a:hover,.form input:focus,.form textarea:focus{border-color:#a6cc00;}body{background-image:url(../../templets/default/css/bg.jpg);}</style>
+</head>
+<body>
+
+<div class="content" style="margin-bottom:338px;">
+<div class="img-and-text">
+<div class="sub-nav">
+<h3>{{$position}}</h3>
+ 
+<ul>
+<foreach name="current_column['second']" item="v">
+<li class="sub-on"><a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$vo['column_name']}}">{{$v['column_name']}}</a></li>
+
+</foreach>
+</ul>
+</div>
+
+
+
+<p>&nbsp;
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">{{$column['column_text']}}</span>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<!-- <span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">《织梦58》内容涉及: 企业类织梦源码，门户类织梦源码，及工作室或博客类等基于织梦系统仿制等风格。</span>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">《织梦58》将向着共享化、全面化、专业化、深度化、免费化的多元方向发展，打造实用快捷的建站体验，为会员及用户提供高质量的服务。</span>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">《织梦58》感谢无数关注、支持我们的会员及各位访客们，感谢您们的信任。年轻的《织梦58》愿与同样充满活力的您，彼此相伴，共同成长！</span>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">《织梦58》只专心做一件事，便是做好的完整的织梦源码！</span>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">织梦58开站以来，尽管没有积累太多用户口碑和市场份额，但我们一直努力，每天保持更新各行各业好源码，让找织梦源码去dede58已经成为很多织梦爱好者的习惯。</span>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">相信通过我们的努力,dede58会越来越好！</span><br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">dede58离不开您的参与，如果您：</span><br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+ -->
+<!-- <span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">1.要出售自己持有的好源码？欢迎您来这里分享，经过审核后会支付一定的金币做为回报。</span><br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">2.苦苦寻觅织梦源码 、迫切希望得到一个改改就能用上的企业网站？这里或许能很快解决您的问题。</span><br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">3.想找个网络模板收藏夹存放自己喜爱的源码或模板？ 这里就是您的选择。</span>
+<br style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;"/>
+
+<span style="color: rgb(51, 51, 51); font-family: 'Microsoft YaHei'; font-size: 15px; line-height: 30px;">4.想结交更多热爱织梦源码建站的朋友？那就快来分享您的源码，寻找志趣相投的朋友吧。</span><br>
+<br> -->
+
+</p>
+</div>
+</div>
+<include file="footer" />
+  </div>
+<script>
+ var rep = /^http/;
+    for(var i = 0;i <= $('.content img').length;i++){
+      if(!rep.test($('.content img').eq(i).attr('src'))){
+        $('.content img').eq(i).attr('src','{{$host}}' + $('.content img').eq(i).attr('src'))
+        
+      }
+        
+    }
+
+ </script>
+ <div style="text-align:center">{{$yundi}}</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<div class="footer-container">
+<div class="uk-container-center footer">
+<div class="uk-grid">
+<div class="uk-width-medium-3-5">
+<div class="uk-grid uk-grid-small">
+
+<foreach name="columns" item="v" key="k">
+<php>if($k <= 4){</php>
+<div class="uk-width-medium-1-5 uk-width-small-1-3 uk-width-1-3">
+<dl>
+
+<dt>
+<a href="{{:U($v['column_type'],array('id'=>$v['column_id']))}}" title="{{$v['column_name']}}" target="_self">{{$v['column_name']}}</a>
+</dt>
+<foreach name="v['second']" item="vo">
+<dd>
+<a href="{{:U($vo['column_type'],array('id'=>$vo['column_id']))}}" title="{{$vo['column_name']}}" target="_self">{{$vo['column_name']}}
+</a>
+</dd>
+</foreach>
+</dl>
+</div>
+<php>}</php>
+</foreach>
+</div>
+</div>
+<div class="uk-width-medium-2-5">
+<div class="weixin uk-grid uk-grid">
+<div class="uk-width-medium-2-5 uk-width-small-1-4 uk-hidden-small">
+<div class="weicode"> </div>
+</div>
+<div class="uk-width-medium-3-5 uk-width-small-3-4">
+<div class="contact-box"> 
+<address>
+<p style="line-height: normal;"><span style="font-size: 14px; font-family: 微软雅黑,Microsoft YaHei;">· 地址：<span style="font-size: 14px;">{{$configs['config_address']}}<br>
+</span></p>
+<p style="line-height: normal;"><span style="font-size: 14px; font-family: 微软雅黑,Microsoft YaHei;">· 传真：{{$configs['config_tel']}}<br>
+· 邮箱：<a class="__cf_email__" href="mailto: aaa@5icool.org">{{$configs['config_email']}}</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></span><br>
+</p>
+</address>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bottom_container">
+<div class="uk-grid uk-container-center">
+<div class="uk-width-medium-4-5">
+<div class="uk-width-medium-1-5"> </div>
+</div>
+</div>
+<script>
+	$(function() {
+		$('.banner').unslider({
+			fluid: true
+		});
+	});
+</script>
